@@ -288,7 +288,7 @@ public class AddAdress extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(AddAdress.this, "" + error, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(AddAdress.this, "" + error, Toast.LENGTH_SHORT).show();
             }
         }) {
 

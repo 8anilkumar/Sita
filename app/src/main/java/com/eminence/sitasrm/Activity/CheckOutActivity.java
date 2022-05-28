@@ -25,6 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.eminence.sitasrm.Activity.Profile.AddAdress;
 import com.eminence.sitasrm.Activity.Profile.Address;
 import com.eminence.sitasrm.Adapters.ProductAdapter;
 import com.eminence.sitasrm.Interface.BadgingInterface;
@@ -283,7 +284,6 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
                             defaults = jsonObject2.getString("defaults");
 
                             if (defaults.equalsIgnoreCase("1")) {
-
                                 isaddressavailable = true;
                                 address_name.setText(name);
                                 address.setText(hfnum + " " + addresss + " near " + landmark);
@@ -291,15 +291,14 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
                                 mobile.setText(mobile1 + "," + mobile2);
                                 default_address_id = id;
                                 if (type.equalsIgnoreCase("Home")) {
+
                                 } else if (type.equalsIgnoreCase("Work")) {
                                     address_name.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_work_with_background, 0);
-
                                 } else {
                                     address_name.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_other_with_background, 0);
                                 }
                             }
                         }
-                    } else {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -450,7 +449,8 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
     }
 
     public void changeaddress(View view) {
-        Intent intent = new Intent(CheckOutActivity.this, Address.class);
+        Intent intent = new Intent(CheckOutActivity.this, AddAdress.class);
+        intent.putExtra("intenttype", "add");
         startActivity(intent);
     }
 

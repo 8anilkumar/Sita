@@ -14,7 +14,7 @@
     <string name="search_orders">Search Sita Orders Products</string>
     <string name="address">Address</string>
     <string name="comments">Comment here</string>
-    <string name="address2">AAddress</string>
+    <string name="address2">Address</string>
     <string name="cart_empty">Your cart is empty. Please add a few items</string>
     <string name="subscription_plans">Subscription Plans</string>
     <string name="out_products">Our Products</string>
@@ -223,7 +223,8 @@
     <string name="dialog_permission_message">This app needs permission to use this feature. You can grant them in app settings.</string>
     <string name="go_to_settings">GOTO SETTINGS</string>
     <string name="who_are_you">Who are you?</string>
-
     <string name="start">GOT IT</string>
+    <string name="selected_lag"> You have selected language </string>
+
 
 </resources>

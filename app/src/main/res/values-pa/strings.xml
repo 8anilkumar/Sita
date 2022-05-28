@@ -226,6 +226,7 @@
     <string name="go_to_settings">ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾਓ</string>
     <string name="who_are_you">ਆਪ ਕੌਣ ਹਨ?</string>
 
-    <string name="start">GOT IT</string>
+    <string name="start">ਮਿਲ ਗਿਆ</string>
+    <string name="selected_lag"> ਤੁਸੀਂ ਭਾਸ਼ਾ ਚੁਣੀ ਹੈ </string>
 
 </resources>

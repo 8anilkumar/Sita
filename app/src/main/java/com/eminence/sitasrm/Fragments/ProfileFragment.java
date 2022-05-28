@@ -126,7 +126,7 @@ public class ProfileFragment extends Fragment {
                 SharedPreferences preferences = getActivity().getSharedPreferences("YourCustomNamedPreference", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.clear();
-                editor.commit();
+                editor.apply();
                 Intent intent = new Intent(getActivity(), WhoeareYou.class);
                 startActivity(intent);
                 getActivity().finish();
@@ -135,8 +135,6 @@ public class ProfileFragment extends Fragment {
         });
 
         setUpDB();
-
-      //  addtocart();
 
         YourPreference yourPrefrence = YourPreference.getInstance(getActivity());
         String language = yourPrefrence.getData("language");

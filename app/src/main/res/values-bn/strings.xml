@@ -224,6 +224,7 @@
     <string name="go_to_settings">সেটিংস এ যান</string>
     <string name="who_are_you">তুমি কে?</string>
 
-    <string name="start">GOT IT</string>
+    <string name="start">বুঝেছি</string>
+    <string name="selected_lag"> আপনি ভাষা নির্বাচন করেছেন </string>
 
 </resources>

@@ -224,6 +224,7 @@
     <string name="who_are_you">تم کون ہو ؟</string>
 
 
-    <string name="start">GOT IT</string>
+    <string name="start">یہ مل گیا</string>
+    <string name="selected_lag"> آپ نے زبان کا انتخاب کیا ہے۔ </string>
 
 </resources>
