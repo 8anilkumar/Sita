@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ima_customer">I am Customer</string>
+    <string name="retailer">" I am Retailer"</string>
+    <string name="retail_login">Retailer Login</string>
+    <string name="customer_login">Customer Login</string>
+    <string name="customer_signup">Customer Signup</string>
+    <string name="retailer_signup">Retailer Signup</string>
+    <string name="namee">Name</string>
+    <string name="business_name">Business Name/Shop Name</string>
+    <string name="business_address">Address of shop/business</string>
+    <string name="city">City</string>
+    <string name="gsst">GST Number (Optional)</string>
+</resources>

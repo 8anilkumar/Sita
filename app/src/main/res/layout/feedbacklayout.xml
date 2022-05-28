@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/ten"
+    app:cardUseCompatPadding="true"
+    android:layout_marginTop="@dimen/ten"
+    android:layout_marginRight="@dimen/ten"
+    android:layout_marginBottom="@dimen/ten"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/ten">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/eightydp"
+            android:layout_height="@dimen/eightydp"
+            android:layout_marginLeft="@dimen/fivedp"
+            android:layout_gravity="center|left"
+            android:src="@drawable/dummyprofile" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="@dimen/ten"
+                android:fontFamily="@font/metropolis_medium"
+                android:gravity="center_vertical"
+                android:maxLength="75"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sixteensp"/>
+
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten"
+                android:scaleX="0.4"
+                android:isIndicator="true"
+                android:layout_marginLeft="@dimen/ten"
+                android:transformPivotX="0dp"
+                android:transformPivotY="0dp"
+                android:scaleY="0.4"
+                android:stepSize="0.1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="-30dp">
+
+                <TextView
+                    android:id="@+id/discription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:text=""
+                     android:layout_marginRight="@dimen/_8sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/tweleve" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

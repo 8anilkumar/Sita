@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/hundreddp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="@dimen/sixtydp"
+                android:layout_height="@dimen/sixtydp"
+                android:layout_gravity="center"
+                android:id="@+id/image"
+                android:src="@drawable/app_logo"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="@dimen/hundreddp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="@dimen/fivedp"
+                    android:layout_marginRight="@dimen/ten"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:gravity="end"
+                    android:text="15 Apr 2021\n12:00PM"
+                    android:textColor="@color/grey"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/twentydp"
+                    android:layout_marginTop="@dimen/ten"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:gravity="center_vertical"
+                    android:maxLength="75"
+                    android:text="Won"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sixteensp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/threedp"
+                android:layout_marginLeft="@dimen/twentydp"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:text="10,000 Points"
+                    android:textAlignment="center"
+                    android:textColor="@color/golden"
+                    android:id="@+id/point"
+                    android:textSize="@dimen/sixteensp" />
+
+                <ImageView
+                    android:layout_width="@dimen/fifteensp"
+                    android:layout_height="@dimen/fifteensp"
+                    android:layout_marginLeft="@dimen/fivedp"
+                    android:src="@drawable/ic_points" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/metropolis_regular"
+                android:layout_below="@+id/btn"
+                android:text="Scan of Rice Packet"
+                android:id="@+id/discription"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginBottom="@dimen/ten"
+                android:layout_marginLeft="@dimen/twentydp"
+                android:textColor="@color/grey"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/lightgrey" />
+
+</LinearLayout>

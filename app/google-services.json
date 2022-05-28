@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "901644719100",
+    "project_id": "sitasrm",
+    "storage_bucket": "sitasrm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901644719100:android:7b9eb3af2659980c7e5879",
+        "android_client_info": {
+          "package_name": "com.eminence.sitasrm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901644719100-4b52mbkhk1egc5o8ih064ekopvrcbojp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eminence.sitasrm",
+            "certificate_hash": "13df8194e9d11c536b9d0a48b499d32d278a4798"
+          }
+        },
+        {
+          "client_id": "901644719100-i1i0jdrqfjr9rof3tga46iho8pcnhalg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eminence.sitasrm",
+            "certificate_hash": "661e843f20cf8425e3b5489783d7021bc9e65888"
+          }
+        },
+        {
+          "client_id": "901644719100-uftg3oq8nogkffjf4hghehmviitjcprv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCICe-KXUcYqrNa_27-nr3jTbdJYCbRvx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901644719100-uftg3oq8nogkffjf4hghehmviitjcprv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

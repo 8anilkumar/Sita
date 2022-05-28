@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_green"
+    tools:context=".Activity.ReferFriendActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sixtydp"
+        android:background="@color/colorPrimary"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/fifteensp"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24"
+                app:tint="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/refer2"
+                android:textColor="@color/white"
+                android:fontFamily="@font/metropolis_regular"
+                android:textSize="@dimen/sixteensp"
+                android:layout_marginLeft="@dimen/twentydp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center_vertical|end">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/twentydp"
+                android:src="@drawable/ic_help" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/twentydp"
+        android:layout_marginTop="@dimen/sixtydp"
+        android:fontFamily="@font/metropolis_extrabold"
+        android:text="@string/Earn1000Points"
+        android:textColor="@color/black"
+        android:textSize="@dimen/twentyfive"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/twentyfive"
+        android:layout_marginTop="@dimen/twentydp"
+        android:layout_marginRight="@dimen/twentyfive"
+        android:layout_marginBottom="@dimen/thirtydp"
+        android:fontFamily="@font/metropolis_regular"
+        android:text="@string/referearnlongtext"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/fourteensp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/whiteroundshape"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/ten"
+            android:fontFamily="@font/metropolis_regular"
+            android:text="@string/invite"
+            android:textColor="@color/darkgrey"
+            android:textSize="@dimen/sixteensp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/twentydp"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="facebook"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/fourtydp"
+                    android:layout_height="@dimen/fourtydp"
+                    android:layout_weight="1"
+                    android:src="@drawable/facebook"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:text="@string/facebook"
+                    android:layout_marginTop="@dimen/fivedp"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="@dimen/tweleve" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="whatsapp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/fourtydp"
+                    android:layout_height="@dimen/fourtydp"
+                    android:layout_weight="1"
+                    android:src="@drawable/whatsapp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:layout_marginTop="@dimen/fivedp"
+                    android:text="@string/whatsapp"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="@dimen/tweleve" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="message"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/fourtydp"
+                    android:layout_height="@dimen/fourtydp"
+                    android:layout_weight="1"
+                    android:src="@drawable/messege"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="@dimen/fivedp"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:text="@string/messege"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="@dimen/tweleve" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="more"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/fourtydp"
+                    android:layout_height="@dimen/fourtydp"
+                    android:layout_weight="1"
+                    android:padding="2dp"
+                    android:src="@drawable/more"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fivedp"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:text="@string/more"
+                    android:textAlignment="center"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="@dimen/tweleve" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

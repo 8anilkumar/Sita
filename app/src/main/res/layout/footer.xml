@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginBottom="-30dp"
+        app:cardElevation="10dp"
+        android:background="@drawable/white_background"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/bottomlayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:elevation="@dimen/_10sdp"
+            android:gravity="center_vertical"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:id="@+id/profile_Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clipToPadding="false"
+                    android:focusable="true"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="?attr/actionButtonStyle">
+
+                    <ImageView
+                        android:id="@+id/img_profile"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_profile"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/txt_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile"
+                    android:gravity="center"
+
+                    android:textSize="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transaction_Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clipToPadding="false"
+                    android:focusable="true"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="?attr/actionButtonStyle">
+
+                    <ImageView
+                        android:id="@+id/img_transaction"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_wallet_inactive" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/txt_transaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Wallet"
+                    android:gravity="center"
+
+                    android:textSize="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/myOrder_Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clipToPadding="false"
+                    android:focusable="true"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="?attr/actionButtonStyle">
+
+                    <ImageView
+                        android:id="@+id/img_myOrder"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_my_orders" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/txt_myOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_order"
+                    android:gravity="center"
+
+                    android:textSize="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cart_Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    style="?attr/actionButtonStyle"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clipToPadding="false"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_cart"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_cart"/>
+
+                    <TextView
+                        android:id="@+id/lead_badge"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right|end|top"
+                        android:layout_marginEnd="-12dp"
+                        android:layout_marginRight="-1dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/badge_background"
+                        android:gravity="center"
+                        android:elevation="@dimen/_1sdp"
+                        android:padding="3dp"
+                        android:textColor="@color/white"
+                        android:visibility="gone"
+                        android:textSize="8sp"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/txt_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cart"
+                    android:gravity="center"
+                    android:textSize="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

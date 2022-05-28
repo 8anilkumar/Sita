@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.TransactionsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@drawable/app_header"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/metropolissemibold"
+                android:text="@string/Wallet"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/metropolissemibold"
+                android:text="Balance"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp" />
+
+            <TextView
+                android:id="@+id/textlong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/metropolis_regular"
+                android:text="Kindly add money for more leads"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_8sdp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp">
+
+                <TextView
+                    android:id="@+id/rupees"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="₹"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_25sdp"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/amounttext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:fontFamily="@font/metropolissemibold"
+                    android:text="0"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_19sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_margin="10dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/metropolissemibold"
+                android:text="Add Points in Wallet"
+                android:textColor="@color/theme"
+                android:textSize="@dimen/_15sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Add Points to wallet and use it for get orders of services"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_border"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_20sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20sdp"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="@font/metropolissemibold"
+                    android:hint="Enter Points"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/_10sdp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/addamt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/silverround"
+                android:backgroundTint="@color/theme"
+                android:fontFamily="@font/metropolissemibold"
+                android:paddingLeft="@dimen/_30sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:paddingRight="@dimen/_30sdp"
+                android:paddingBottom="@dimen/_7sdp"
+                android:text="ADD POINTS"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:background="@drawable/wallet_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+          <ImageView
+              android:layout_width="@dimen/_80sdp"
+              android:layout_height="@dimen/_80sdp"
+              android:src="@drawable/wallet_cash"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cashback_wallet_balance"
+                android:fontFamily="@font/metropolissemibold"
+                android:textColor="@color/theme"
+                android:textSize="@dimen/_14sdp"/>
+
+            <TextView
+                android:id="@+id/txt_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/metropolis_bold"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_24sdp"/>
+
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_2sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/light_grey_gray2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/_8sdp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/metropolissemibold"
+                                android:text="@string/transaction"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_16sdp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/allTransactionsLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end|center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/btn"
+                                android:layout_marginLeft="@dimen/_16sdp"
+                                android:fontFamily="@font/metropolis_regular"
+                                android:drawableRight="@drawable/ic_arrow_forward"
+                                android:text="@string/Seeall"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/todaylayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/white_background"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:fontFamily="@font/metropolissemibold"
+                                    android:singleLine="true"
+                                    android:text="@string/Today"
+                                    android:textColor="@color/theme"
+                                    android:textSize="14sp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:background="@color/light_grey_gray2" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_10sdp">
+
+                                    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                                        android:id="@+id/today_recycle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:background="@color/light_grey_gray2"
+                                        android:nestedScrollingEnabled="false"
+                                        android:scrollbars="none"
+                                        android:visibility="visible"
+                                        tools:ignore="UnusedAttribute"
+                                        tools:listitem="@layout/transaction_list_row"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/yesterdaylayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/white_background"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:fontFamily="@font/metropolissemibold"
+                                    android:singleLine="true"
+                                    android:text="@string/yesterday"
+                                    android:textColor="@color/theme"
+                                    android:textSize="14sp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:background="@color/light_grey_gray2" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_10sdp">
+
+                                    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                                        android:id="@+id/yesterday_recycle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:background="@color/white"
+                                        android:nestedScrollingEnabled="false"
+                                        android:scrollbars="none"
+                                        android:visibility="visible"
+                                        tools:ignore="UnusedAttribute"
+                                        tools:listitem="@layout/transaction_list_row" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/earlier_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/white_background"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:fontFamily="@font/metropolissemibold"
+                                    android:singleLine="true"
+                                    android:text="@string/earlier"
+                                    android:textColor="@color/theme"
+                                    android:textSize="14sp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:background="@color/light_grey_gray2" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_10sdp">
+
+                                    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                                        android:id="@+id/earlier_recycle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:background="@color/white"
+                                        android:nestedScrollingEnabled="false"
+                                        android:scrollbars="none"
+                                        android:visibility="visible"
+                                        tools:ignore="UnusedAttribute"
+                                        tools:listitem="@layout/transaction_list_row" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/cartEmptyLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                android:background="@drawable/white_background"
+                                android:orientation="vertical"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/img_imptyCart"
+                                    android:layout_width="@dimen/_150p"
+                                    android:layout_height="@dimen/_150sdp"
+                                    android:src="@drawable/ic_transaction"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/no_transaction"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:fontFamily="@font/metropolis_bold"
+                                    android:layout_marginLeft="@dimen/_40sdp"
+                                    android:layout_marginRight="@dimen/_40sdp"
+                                    android:layout_marginBottom="@dimen/_50sdp"
+                                    android:textSize="18sp"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.core.widget.NestedScrollView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/mainProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

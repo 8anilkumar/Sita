@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#21201B"
+    android:orientation="vertical"
+    tools:context=".Activity.Profile.Scratch_coupon">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="back"
+        android:src="@drawable/ic_icon_close_circle"
+        app:tint="@color/white"
+        android:layout_margin="@dimen/_10sdp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/coupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/coupon_points"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/point_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_55sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:fontFamily="@font/metropolis_bold"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_30sdp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <in.myinnos.androidscratchcard.ScratchCard
+                android:id="@+id/scratchCard"
+                android:layout_width="258dp"
+                android:layout_height="259dp"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                app:scratchDrawable="@drawable/scracth_coupon"
+                app:scratchWidth="@dimen/_25sdp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_background"
+            android:layout_marginTop="@dimen/_20sdp">
+
+            <TextView
+                android:id="@+id/txtDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EARNED ON 11 Mar, 2022"
+                android:textSize="@dimen/_12sdp"
+                android:paddingStart="@dimen/_30sdp"
+                android:paddingEnd="@dimen/_30sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:paddingBottom="@dimen/_10sdp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#EFFFF0"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Help">
+
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@drawable/app_header"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/fifteensp"
+                android:onClick="back"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24"
+                app:tint="@color/white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/twentydp"
+                android:fontFamily="@font/metropolissemibold"
+                android:singleLine="true"
+                android:text="@string/help"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/twentydp"
+        android:layout_marginTop="@dimen/twentydp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/metropolissemibold"
+            android:text="@string/yourquery"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sixteensp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:background="@drawable/skipbackbg"
+        android:layout_margin="@dimen/twentydp"
+        android:id="@+id/messegaA"
+        android:layout_height="@dimen/_200sdp"
+        android:hint="@string/describe"
+        android:gravity="start"
+        android:inputType="textMultiLine"
+        android:textSize="@dimen/fourteensp"
+        android:maxLength="1000"
+        android:paddingLeft="@dimen/ten"
+        android:paddingTop="@dimen/ten"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="0/1000"
+        android:id="@+id/counter"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/twentydp"
+        android:fontFamily="@font/metropolis_regular"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/sixteensp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="@dimen/onefiftydp"
+        android:layout_height="45dp"
+        android:layout_marginTop="@dimen/fortyfive"
+        android:onClick="reqcalling"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/twentyfive"
+        android:background="@drawable/corner_grey_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/metropolis_regular"
+            android:text="@string/submit"
+            android:textColor="@color/dark_green"
+            android:textSize="@dimen/fourteensp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</LinearLayout>

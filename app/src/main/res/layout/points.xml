@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/skyblue"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/couponLayout"
+                android:layout_width="158dp"
+                android:layout_height="159dp"
+                android:background="@drawable/coupon_points"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/metropolis_bold"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/scratchCardLayout"
+                android:layout_width="158dp"
+                android:layout_height="159dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/scracth_coupon"
+                android:visibility="visible"
+                android:orientation="horizontal" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

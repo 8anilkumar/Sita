@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:id="@+id/camera"
+        android:layout_margin="@dimen/twentydp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_camera_alt_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/metropolis_regular"
+            android:text="@string/camera"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/fourteensp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:id="@+id/gallery"
+        android:layout_margin="@dimen/twentydp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:id="@+id/image"
+            android:src="@drawable/ic_baseline_insert_photo_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/metropolis_regular"
+            android:layout_below="@+id/btn"
+            android:text="@string/gallery"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/fourteensp" />
+
+    </LinearLayout>
+
+</LinearLayout>
