@@ -408,6 +408,70 @@ public class CartFragment extends Fragment implements BadgingInterface {
 
     }
 
+    public static void proceedTOPay(Context context) {
+
+        String url = baseurl + "cart_calculation";
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        YourPreference yourPrefrence = YourPreference.getInstance(context);
+        String id = yourPrefrence.getData("id");
+
+        Map<String, String> params = new HashMap();
+        params.put("user_id", id);
+        JSONObject parameters = new JSONObject(params);
+        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, url, parameters, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                try {
+                    JSONObject obj = new JSONObject(String.valueOf(response));
+                    String status_code = obj.getString("status");
+                    if (status_code.equalsIgnoreCase("1")) {
+                        String total_products = obj.getString("total_products");
+                        int total_Amount = obj.getInt("total_amount");
+                        int discount_Amount = obj.getInt("total_discount");
+                        int payAmount = total_Amount - discount_Amount;
+                        if(discount_Amount == 0) {
+                            txtNoteAmount.setText("Total Amount");
+                            txtRupeeSign.setText("₹");
+                            idtotal_amount.setText(total_Amount+"");
+                        } else {
+                            txtNoteAmount.setText("Total Amount - Discount = Payable Amount");
+                            txtRupeeSign.setText("₹" + total_Amount + " - " + "₹" + discount_Amount + " = " + "₹");
+                            idtotal_amount.setText(payAmount + "");
+                        }
+
+                        totalAmount = total_Amount;
+                        discountAmount = discount_Amount;
+                        payableAmount = payAmount;
+
+                        int total_cart_item = Integer.parseInt(total_products);
+                        badgecountmain(total_cart_item);
+
+                        Intent intent = new Intent(context, CheckOutActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                        intent.putExtra("total_amount", totalAmount);
+                        intent.putExtra("discount_amount", discountAmount);
+                        intent.putExtra("payable_amount", payableAmount);
+                        context.startActivity(intent);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }) {
+
+        };
+
+        requestQueue.add(stringRequest);
+        stringRequest.setShouldCache(false);
+
+    }
+
 
     @Override
     public void onStop() {

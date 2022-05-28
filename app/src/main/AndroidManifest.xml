@@ -135,13 +135,13 @@
             </intent-filter>
         </service>
 
-<!--        <meta-data-->
-<!--            android:name="com.razorpay.ApiKey"-->
-<!--            android:value="rzp_test_fBt7ioiP8dtxz5" />-->
-
         <meta-data
             android:name="com.razorpay.ApiKey"
-            android:value="rzp_live_ZtqpoZOJURFTIP" />
+            android:value="rzp_test_fBt7ioiP8dtxz5" />
+
+<!--        <meta-data-->
+<!--            android:name="com.razorpay.ApiKey"-->
+<!--            android:value="rzp_live_ZtqpoZOJURFTIP" />-->
 
         <activity
             android:name=".Activity.IntroSliderActivity"

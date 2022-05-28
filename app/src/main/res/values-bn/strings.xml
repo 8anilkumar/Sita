@@ -12,7 +12,7 @@
     <string name="cart">কার্ট</string>
     <string name="search">সীতা পণ্য অনুসন্ধান করুন</string>
     <string name="search_orders">সীতা অর্ডার পণ্য অনুসন্ধান করুন</string>
-    <string name="address">ঠিকানা</string>
+    <string name="address">ঠিকানা <font color='#FF4A4A'>*</font></string>
     <string name="comments">এখানে মন্তব্য করুন</string>
     <string name="address2">ঠিকানা</string>
     <string name="cart_empty">তোমার থলে তো খালি. কিছু আইটেম যোগ করুন</string>
@@ -65,13 +65,13 @@
     <string name="cancel_now">আদেশ বাতিল</string>
     <string name="view_all_order">সমস্ত অর্ডার দেখুন</string>
     <string name="cancellation_confirmed">বাতিলকরণ নিশ্চিত করা হয়েছে</string>
-    <string name="fullname">পুরো নাম</string>
-    <string name="house_flat">বাড়ি/ফ্ল্যাট নম্বর</string>
-    <string name="landmark">ল্যান্ডমার্ক</string>
-    <string name="state">রাষ্ট্র</string>
-    <string name="pincode">পিনকোড</string>
-    <string name="phone_number1">ফোন নম্বর 1</string>
-    <string name="phone_number2">ফোন নম্বর 2</string>
+    <string name="fullname">পুরো নাম <font color='#FF4A4A'>*</font></string>
+    <string name="house_flat">বাড়ি/ফ্ল্যাট নম্বর <font color='#FF4A4A'>*</font></string>
+    <string name="landmark">ল্যান্ডমার্ক <font color='#FF4A4A'>*</font></string>
+    <string name="state">রাষ্ট্র <font color='#FF4A4A'>*</font></string>
+    <string name="pincode">পিনকোড <font color='#FF4A4A'>*</font></string>
+    <string name="phone_number1">ফোন নম্বর 1 <font color='#FF4A4A'>*</font></string>
+    <string name="phone_number2">ফোন নম্বর 2 </string>
     <string name="enter_house_number">বাড়ির নম্বর লিখুন</string>
     <string name="enter_address">সম্পূর্ণ ঠিকানা লিখুন</string>
     <string name="near_by">কাছাকাছি</string>
@@ -135,7 +135,7 @@
     <string name="addnewaddress">নতুন ঠিকানা যোগ করুন</string>
     <string name="addshipingaddress">বিতরণ ঠিকানা যোগ করুন</string>
     <string name="fillther">প্রদত্ত ফাঁকা ক্ষেত্রগুলি পূরণ করুন</string>
-    <string name="saveas">সংরক্ষণ করুন</string>
+    <string name="saveas">সংরক্ষণ করুন <font color='#FF4A4A'>*</font></string>
     <string name="home">বাড়ি</string>
     <string name="work">কাজ</string>
     <string name="other">অন্যান্য</string>
@@ -224,6 +224,7 @@
     <string name="go_to_settings">সেটিংস এ যান</string>
     <string name="who_are_you">তুমি কে?</string>
 
-    <string name="start">GOT IT</string>
+    <string name="start">বুঝেছি</string>
+    <string name="selected_lag"> আপনি ভাষা নির্বাচন করেছেন </string>
 
 </resources>

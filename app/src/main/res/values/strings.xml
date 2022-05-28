@@ -12,9 +12,9 @@
     <string name="cart">Cart</string>
     <string name="search">Search Sita Products</string>
     <string name="search_orders">Search Sita Orders Products</string>
-    <string name="address">Address</string>
+    <string name="address">Address <font color='#FF4A4A'>*</font></string>
     <string name="comments">Comment here</string>
-    <string name="address2">AAddress</string>
+    <string name="address2">Address</string>
     <string name="cart_empty">Your cart is empty. Please add a few items</string>
     <string name="subscription_plans">Subscription Plans</string>
     <string name="out_products">Our Products</string>
@@ -65,13 +65,13 @@
     <string name="cancel_now">Cancel Order</string>
     <string name="view_all_order">View all order</string>
     <string name="cancellation_confirmed">Cancellation Confirmed</string>
-    <string name="fullname">Full Name</string>
-    <string name="house_flat">House/Flat number</string>
-    <string name="landmark">Landmark</string>
-    <string name="state">State</string>
-    <string name="pincode">Pincode</string>
-    <string name="phone_number1">Phone Number 1</string>
-    <string name="phone_number2">Phone Number 2</string>
+    <string name="fullname">Full Name <font color='#FF4A4A'>*</font></string>
+    <string name="house_flat">House/Flat number <font color='#FF4A4A'>*</font></string>
+    <string name="landmark">Landmark <font color='#FF4A4A'>*</font></string>
+    <string name="state">State <font color='#FF4A4A'>*</font></string>
+    <string name="pincode">Pincode <font color='#FF4A4A'>*</font></string>
+    <string name="phone_number1">Phone Number 1 <font color='#FF4A4A'>*</font> </string>
+    <string name="phone_number2">Phone Number 2 </string>
     <string name="enter_house_number">Enter house number</string>
     <string name="enter_address">Enter Full Address</string>
     <string name="near_by">Near by</string>
@@ -135,7 +135,7 @@
     <string name="addnewaddress">Add New Address</string>
     <string name="addshipingaddress">Add delivery address</string>
     <string name="fillther">Fill the given blank fields</string>
-    <string name="saveas">Save As</string>
+    <string name="saveas">Save As <font color='#FF4A4A'>*</font></string>
     <string name="home">Home</string>
     <string name="work">Work</string>
     <string name="other">Other</string>
@@ -223,7 +223,8 @@
     <string name="dialog_permission_message">This app needs permission to use this feature. You can grant them in app settings.</string>
     <string name="go_to_settings">GOTO SETTINGS</string>
     <string name="who_are_you">Who are you?</string>
-
     <string name="start">GOT IT</string>
+    <string name="selected_lag"> You have selected language </string>
+
 
 </resources>

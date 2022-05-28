@@ -157,6 +157,7 @@ public class AddAdress extends AppCompatActivity {
             landmark.setText(landmarkk);
             state.setText(statee);
             pincode.setText(pincodew);
+
             if (typew.equalsIgnoreCase("Other")) {
                 onthertype.setBackgroundResource(R.drawable.ractenglebg2);
                 worktype.setBackgroundResource(R.drawable.bordergrey);
@@ -168,8 +169,7 @@ public class AddAdress extends AppCompatActivity {
                 ImageViewCompat.setImageTintList(Workicon, ColorStateList.valueOf(ContextCompat.getColor(AddAdress.this, R.color.grey)));
                 ImageViewCompat.setImageTintList(homeicon, ColorStateList.valueOf(ContextCompat.getColor(AddAdress.this, R.color.grey)));
                 type = "Other";
-            }
-            else if (typew.equalsIgnoreCase("Work")) {
+            } else if (typew.equalsIgnoreCase("Work")) {
                 onthertype.setBackgroundResource(R.drawable.bordergrey);
                 worktype.setBackgroundResource(R.drawable.ractenglebg2);
                 hometype.setBackgroundResource(R.drawable.bordergrey);
@@ -180,9 +180,7 @@ public class AddAdress extends AppCompatActivity {
                 ImageViewCompat.setImageTintList(Workicon, ColorStateList.valueOf(ContextCompat.getColor(AddAdress.this, R.color.white)));
                 ImageViewCompat.setImageTintList(homeicon, ColorStateList.valueOf(ContextCompat.getColor(AddAdress.this, R.color.grey)));
                 type = "Work";
-
-            }
-            else if (typew.equalsIgnoreCase("Home")) {
+            } else {
                 onthertype.setBackgroundResource(R.drawable.bordergrey);
                 worktype.setBackgroundResource(R.drawable.bordergrey);
                 hometype.setBackgroundResource(R.drawable.ractenglebg2);
@@ -195,7 +193,19 @@ public class AddAdress extends AppCompatActivity {
                 type = "Home";
             }
 
+        } else {
+            onthertype.setBackgroundResource(R.drawable.bordergrey);
+            worktype.setBackgroundResource(R.drawable.bordergrey);
+            hometype.setBackgroundResource(R.drawable.ractenglebg2);
+            OtherText.setTextColor(getResources().getColor(R.color.grey));
+            Worktext.setTextColor(getResources().getColor(R.color.grey));
+            hometext.setTextColor(getResources().getColor(R.color.white));
+            ImageViewCompat.setImageTintList(OtherIcon, ColorStateList.valueOf(ContextCompat.getColor(AddAdress.this, R.color.grey)));
+            ImageViewCompat.setImageTintList(Workicon, ColorStateList.valueOf(ContextCompat.getColor(AddAdress.this, R.color.grey)));
+            ImageViewCompat.setImageTintList(homeicon, ColorStateList.valueOf(ContextCompat.getColor(AddAdress.this, R.color.white)));
+            type = "Home";
         }
+
         onthertype.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -288,7 +298,7 @@ public class AddAdress extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(AddAdress.this, "" + error, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(AddAdress.this, "" + error, Toast.LENGTH_SHORT).show();
             }
         }) {
 
@@ -393,6 +403,12 @@ public class AddAdress extends AppCompatActivity {
             } else {
                 mobile1.setError("Please enter 10 digit mobile number");
             }
+        } else if (validateMobile()) {
+            if (language.equalsIgnoreCase("hi") || language.equalsIgnoreCase("")) {
+                mobile2.setError("कृपया 10 अंकों का मोबाइल नंबर दर्ज करें");
+            } else {
+                mobile2.setError("Please enter 10 digit mobile number");
+            }
         } else if (state.getText().toString().equalsIgnoreCase("")) {
             if (language.equalsIgnoreCase("hi")||language.equalsIgnoreCase("")) {
                 state.setError("फील्ड अनिवार्य है");
@@ -436,6 +452,17 @@ public class AddAdress extends AppCompatActivity {
 
     public void help(View view) {
         startActivity(new Intent(getApplicationContext(), Help.class));
+    }
+
+    private boolean validateMobile() {
+        boolean checkNumber = false;
+        if(mobile2.getText().toString().length() != 0) {
+           if (mobile2.getText().toString().length() != 10) {
+              checkNumber = true;
+           }
+       }
+
+        return checkNumber;
     }
 
 }

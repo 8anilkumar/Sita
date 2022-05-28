@@ -13,7 +13,7 @@
     <string name="cart">ٹوکری</string>
     <string name="search">سیتا کی مصنوعات تلاش کریں۔</string>
     <string name="search_orders">سیتا آرڈر کی مصنوعات تلاش کریں۔</string>
-    <string name="address">پتہ۔</string>
+    <string name="address">پتہ۔<font color='#FF4A4A'>*</font></string>
     <string name="comments">یہاں تبصرہ کریں۔</string>
     <string name="address2">پتہ</string>
     <string name="cart_empty">آپ کی ٹوکری خالی ہے. براہ کرم چند اشیاء شامل کریں۔</string>
@@ -66,12 +66,12 @@
     <string name="cancel_now">آرڈر منسوخ کر دیں</string>
     <string name="view_all_order">تمام آرڈر دیکھیں۔</string>
     <string name="cancellation_confirmed">منسوخی کی تصدیق</string>
-    <string name="fullname">پورا نام</string>
-    <string name="house_flat">مکان/فلیٹ نمبر۔</string>
-    <string name="landmark">لینڈ مارک۔</string>
-    <string name="state">حالت</string>
-    <string name="pincode">خفیہ نمبر</string>
-    <string name="phone_number1">فون نمبر 1</string>
+    <string name="fullname">پورا نام <font color='#FF4A4A'>*</font></string>
+    <string name="house_flat">مکان/فلیٹ نمبر۔<font color='#FF4A4A'>*</font></string>
+    <string name="landmark">لینڈ مارک۔<font color='#FF4A4A'>*</font></string>
+    <string name="state"><font color='#FF4A4A'>*</font> حالت</string>
+    <string name="pincode"><font color='#FF4A4A'>*</font>خفیہ نمبر</string>
+    <string name="phone_number1">فون نمبر <font color='#FF4A4A'>*</font>1</string>
     <string name="phone_number2">فون نمبر 2</string>
     <string name="enter_house_number">گھر نمبر درج کریں۔</string>
     <string name="enter_address">مکمل پتہ درج کریں۔</string>
@@ -136,7 +136,7 @@
     <string name="addnewaddress">نیا پتہ شامل کریں۔</string>
     <string name="addshipingaddress">ترسیل کا پتہ شامل کریں۔</string>
     <string name="fillther">دیئے گئے خالی فیلڈز کو پُر کریں۔</string>
-    <string name="saveas">ایسے محفوظ کریں</string>
+    <string name="saveas"><font color='#FF4A4A'>*</font>ایسے محفوظ کریں</string>
     <string name="home">گھر</string>
     <string name="work">کام</string>
     <string name="other">دیگر</string>
@@ -224,6 +224,7 @@
     <string name="who_are_you">تم کون ہو ؟</string>
 
 
-    <string name="start">GOT IT</string>
+    <string name="start">یہ مل گیا</string>
+    <string name="selected_lag"> آپ نے زبان کا انتخاب کیا ہے۔ </string>
 
 </resources>

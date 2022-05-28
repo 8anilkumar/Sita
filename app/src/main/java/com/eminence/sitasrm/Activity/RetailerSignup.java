@@ -63,7 +63,6 @@ public class RetailerSignup extends AppCompatActivity implements View.OnClickLis
     RelativeLayout otpverify_Layout;
     LinearLayout helpLayout;
     SpinnerDialog spinnerDialog;
-    String language;
     TextView languagebuttomn, txt_logIn, state_edt, city_edt;
     FirebaseAnalytics firebaseAnalytics;
     EditText gst;
@@ -72,7 +71,6 @@ public class RetailerSignup extends AppCompatActivity implements View.OnClickLis
     ArrayList<StateModel> stateList = new ArrayList<>();
     ArrayList<CityModel> cityList = new ArrayList<>();
     ProgressBar mainProgressBar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,17 +102,28 @@ public class RetailerSignup extends AppCompatActivity implements View.OnClickLis
         });
 
         YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
-        String language = yourPrefrence.getData("languagetext");
+        String language = yourPrefrence.getData("language");
 
-        spinnerDialog = new SpinnerDialog(RetailerSignup.this, list, "Select Language", R.style.DialogAnimations_SmileWindow, "Close");
+        spinnerDialog = new SpinnerDialog(RetailerSignup.this, list, getResources().getString(R.string.select_language), R.style.DialogAnimations_SmileWindow, "Close");
         spinnerDialog.setCancellable(true);
         spinnerDialog.setShowKeyboard(false);
 
         if (language.equalsIgnoreCase("")) {
             languagebuttomn.setText("English");
         } else {
-            languagebuttomn.setText(language);
-
+            if (language.equalsIgnoreCase("en")) {
+                languagebuttomn.setText(getResources().getString(R.string.english));
+            } else if (language.equalsIgnoreCase("hi")) {
+                languagebuttomn.setText(getResources().getString(R.string.hindi));
+            } else if (language.equalsIgnoreCase("pa")) {
+                languagebuttomn.setText(getResources().getString(R.string.pangabi));
+            } else if (language.equalsIgnoreCase("ur")) {
+                languagebuttomn.setText(getResources().getString(R.string.urdu));
+            } else if (language.equalsIgnoreCase("bn")) {
+                languagebuttomn.setText(getResources().getString(R.string.bangali));
+            } else {
+                languagebuttomn.setText(getResources().getString(R.string.english));
+            }
         }
 
         if (Helper.INSTANCE.isNetworkAvailable(RetailerSignup.this)) {
@@ -389,7 +398,6 @@ public class RetailerSignup extends AppCompatActivity implements View.OnClickLis
                                 finishAffinity();
                             }
                         }, 1500);
-                    } else {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -422,8 +430,7 @@ public class RetailerSignup extends AppCompatActivity implements View.OnClickLis
                     } else {
                         name.setError("फील्ड अनिवार्य है");
                     }
-                }
-                else if (business_name.getText().toString().trim().equalsIgnoreCase("")) {
+                } else if (business_name.getText().toString().trim().equalsIgnoreCase("")) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     String language = yourPrefrence.getData("language");
                     if (language.equalsIgnoreCase("en") || language.equalsIgnoreCase("")) {
@@ -431,8 +438,7 @@ public class RetailerSignup extends AppCompatActivity implements View.OnClickLis
                     } else {
                         business_name.setError("फील्ड अनिवार्य है");
                     }
-                }
-                else if (address_busnesnn.getText().toString().trim().equalsIgnoreCase("")) {
+                } else if (address_busnesnn.getText().toString().trim().equalsIgnoreCase("")) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     String language = yourPrefrence.getData("language");
                     if (language.equalsIgnoreCase("en") || language.equalsIgnoreCase("")) {
@@ -440,8 +446,7 @@ public class RetailerSignup extends AppCompatActivity implements View.OnClickLis
                     } else {
                         address_busnesnn.setError("फील्ड अनिवार्य है");
                     }
-                }
-                else if (state_edt.getText().toString().trim().equalsIgnoreCase("")) {
+                } else if (state_edt.getText().toString().trim().equalsIgnoreCase("")) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     String language = yourPrefrence.getData("language");
                     if (language.equalsIgnoreCase("en") || language.equalsIgnoreCase("")) {
@@ -449,8 +454,7 @@ public class RetailerSignup extends AppCompatActivity implements View.OnClickLis
                     } else {
                         state_edt.setError("फील्ड अनिवार्य है");
                     }
-                }
-                else if (city_edt.getText().toString().trim().equalsIgnoreCase("")) {
+                } else if (city_edt.getText().toString().trim().equalsIgnoreCase("")) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     String language = yourPrefrence.getData("language");
                     if (language.equalsIgnoreCase("en") || language.equalsIgnoreCase("")) {
@@ -467,9 +471,7 @@ public class RetailerSignup extends AppCompatActivity implements View.OnClickLis
                         number.setError("फील्ड अनिवार्य है");
                     }
                 } else {
-
-                        Firebase_token_init("mobile");
-
+                    Firebase_token_init("mobile");
                 }
         }
     }
@@ -478,43 +480,36 @@ public class RetailerSignup extends AppCompatActivity implements View.OnClickLis
         spinnerDialog.bindOnSpinerListener(new OnSpinerItemClick() {
             @Override
             public void onClick(String item, int position) {
-                //   Toast.makeText(Loannewlead.this, item + "  " + position+"", Toast.LENGTH_SHORT).show();
-                language = item;
                 languagebuttomn.setText(item);
 
                 if (position == 0) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     yourPrefrence.saveData("language", "en");
                     yourPrefrence.saveData("languagetext", item);
-                    Toast.makeText(RetailerSignup.this, "Selected Language is " + item, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                     finishAffinity();
                 } else if (position == 1) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     yourPrefrence.saveData("languagetext", item);
                     yourPrefrence.saveData("language", "hi");
-                    Toast.makeText(RetailerSignup.this, "Selected Language is " + item, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                     finishAffinity();
                 } else if (position == 2) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     yourPrefrence.saveData("languagetext", item);
                     yourPrefrence.saveData("language", "pa");
-                    Toast.makeText(RetailerSignup.this, "Selected Language is " + item, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                     finishAffinity();
                 } else if (position == 3) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     yourPrefrence.saveData("languagetext", item);
                     yourPrefrence.saveData("language", "ur");
-                    Toast.makeText(RetailerSignup.this, "Selected Language is " + item, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                     finishAffinity();
                 } else if (position == 4) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     yourPrefrence.saveData("languagetext", item);
                     yourPrefrence.saveData("language", "bn");
-                    Toast.makeText(RetailerSignup.this, "Selected Language is " + item, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                     finishAffinity();
                 }

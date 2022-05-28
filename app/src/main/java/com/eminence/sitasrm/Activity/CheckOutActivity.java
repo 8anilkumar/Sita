@@ -25,6 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.eminence.sitasrm.Activity.Profile.AddAdress;
 import com.eminence.sitasrm.Activity.Profile.Address;
 import com.eminence.sitasrm.Adapters.ProductAdapter;
 import com.eminence.sitasrm.Interface.BadgingInterface;
@@ -115,16 +116,7 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
 
         alldata = databaseHandler.cartInterface().getallcartdata();
         if (Helper.INSTANCE.isNetworkAvailable(CheckOutActivity.this)) {
-
-            // addtocart();
             getamount();
-            // getUserProfile();
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    //   CartList();
-                }
-            }, 1000);
 
         } else {
             Helper.INSTANCE.Error(CheckOutActivity.this, getString(R.string.NOCONN));
@@ -146,6 +138,7 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
             @Override
             public void onClick(View v) {
                 if (cb_userWallet.isChecked()) {
+
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     String walletAmount = txt_userWalletAmount.getText().toString();
                     String nextAmount = payble_amt_main.getText().toString();
@@ -153,21 +146,23 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
 
                     if (Integer.parseInt(walletAmount) > Integer.parseInt(nextAmount)) {
                         int safaAmount = Integer.parseInt(walletAmount) - Integer.parseInt(nextAmount);
-                        txt_walletDiductAmount.setText("" + nextAmount);
+                        txt_walletDiductAmount.setText(" -" + nextAmount);
                         txt_rupeeSign.setVisibility(View.VISIBLE);
                         txt_userWalletAmount.setText("" + safaAmount);
                         payble_amt_main.setText("0");
+                        payble_amt_txt.setText("₹ " + "0");
                         yourPrefrence.saveData("wallet_diduct_amount", nextAmount);
-                        txt_wallet_amount.setText("₹" + nextAmount);
+                        txt_wallet_amount.setText("₹ -" + nextAmount);
 
                     } else {
                         int safaAmount = Integer.parseInt(nextAmount) - Integer.parseInt(walletAmount);
-                        txt_walletDiductAmount.setText("" + walletAmount);
+                        txt_walletDiductAmount.setText(" -" + walletAmount);
                         txt_rupeeSign.setVisibility(View.VISIBLE);
                         payble_amt_main.setText("" + safaAmount);
+                        payble_amt_txt.setText("₹" + safaAmount);
                         txt_userWalletAmount.setText("0");
                         yourPrefrence.saveData("wallet_diduct_amount", walletAmount);
-                        txt_wallet_amount.setText("₹" + walletAmount);
+                        txt_wallet_amount.setText("₹ -" + walletAmount);
                     }
 
                 } else {
@@ -183,6 +178,8 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
                     txt_wallet_amount.setText("");
                     txt_rupeeSign.setVisibility(View.GONE);
                     payble_amt_main.setText("" + safaAmount);
+                    payble_amt_txt.setText("₹" + safaAmount);
+
                     yourPrefrence.saveData("wallet_diduct_amount", nextAmount);
 
                 }
@@ -191,11 +188,40 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
 
     }
 
+    private void calculateAmount() {
+        YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
+        String walletAmount = txt_userWalletAmount.getText().toString();
+        String nextAmount = payble_amt_main.getText().toString();
+        walletAmountLayout.setVisibility(View.VISIBLE);
+
+        if (Integer.parseInt(walletAmount) > Integer.parseInt(nextAmount)) {
+            int safaAmount = Integer.parseInt(walletAmount) - Integer.parseInt(nextAmount);
+            txt_walletDiductAmount.setText(" -" + nextAmount);
+            txt_rupeeSign.setVisibility(View.VISIBLE);
+            txt_userWalletAmount.setText("" + safaAmount);
+            payble_amt_main.setText("0");
+            payble_amt_txt.setText("₹ " + "0");
+
+            yourPrefrence.saveData("wallet_diduct_amount", nextAmount);
+            txt_wallet_amount.setText("₹ -" + nextAmount);
+
+        } else {
+            int safaAmount = Integer.parseInt(nextAmount) - Integer.parseInt(walletAmount);
+            txt_walletDiductAmount.setText(" -" + walletAmount);
+            txt_rupeeSign.setVisibility(View.VISIBLE);
+            payble_amt_main.setText("" + safaAmount);
+            payble_amt_txt.setText("₹" + safaAmount);
+
+            txt_userWalletAmount.setText("0");
+            yourPrefrence.saveData("wallet_diduct_amount", walletAmount);
+            txt_wallet_amount.setText("₹ -" + walletAmount);
+        }
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
         address();
-
     }
 
     public void getamount() {
@@ -218,6 +244,7 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
                     if (r_code.equalsIgnoreCase("1")) {
                         String amount = obj.getString("balance");
                         txt_userWalletAmount.setText(amount);
+                        calculateAmount();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -283,7 +310,6 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
                             defaults = jsonObject2.getString("defaults");
 
                             if (defaults.equalsIgnoreCase("1")) {
-
                                 isaddressavailable = true;
                                 address_name.setText(name);
                                 address.setText(hfnum + " " + addresss + " near " + landmark);
@@ -291,15 +317,14 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
                                 mobile.setText(mobile1 + "," + mobile2);
                                 default_address_id = id;
                                 if (type.equalsIgnoreCase("Home")) {
+
                                 } else if (type.equalsIgnoreCase("Work")) {
                                     address_name.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_work_with_background, 0);
-
                                 } else {
                                     address_name.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_other_with_background, 0);
                                 }
                             }
                         }
-                    } else {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -450,8 +475,15 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
     }
 
     public void changeaddress(View view) {
-        Intent intent = new Intent(CheckOutActivity.this, Address.class);
-        startActivity(intent);
+        if(isaddressavailable){
+            Intent intent = new Intent(CheckOutActivity.this, Address.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(CheckOutActivity.this, AddAdress.class);
+            intent.putExtra("intenttype", "add");
+            startActivity(intent);
+        }
+
     }
 
     @Override
@@ -545,7 +577,6 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        //   addtocart();
     }
 
 }

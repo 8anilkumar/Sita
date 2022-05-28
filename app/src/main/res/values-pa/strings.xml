@@ -13,7 +13,7 @@
     <string name="cart">ਕਾਰਟ</string>
     <string name="search">ਸੀਤਾ ਉਤਪਾਦਾਂ ਦੀ ਖੋਜ ਕਰੋ</string>
     <string name="search_orders">ਸੀਤਾ ਆਰਡਰ ਉਤਪਾਦਾਂ ਦੀ ਖੋਜ ਕਰੋ</string>
-    <string name="address">ਪਤਾ</string>
+    <string name="address">ਪਤਾ <font color='#FF4A4A'>*</font></string>
     <string name="comments">ਇੱਥੇ ਟਿੱਪਣੀ ਕਰੋ</string>
     <string name="address2">ਪਤਾ</string>
     <string name="cart_empty">ਤੁਹਾਡੀ ਕਾਰਟ ਖਾਲੀ ਹੈ. ਕਿਰਪਾ ਕਰਕੇ ਕੁਝ ਆਈਟਮਾਂ ਸ਼ਾਮਲ ਕਰੋ</string>
@@ -66,13 +66,13 @@
     <string name="cancel_now">ਆਰਡਰ ਰੱਦ ਕਰੋ</string>
     <string name="view_all_order">ਸਾਰਾ ਆਰਡਰ ਵੇਖੋ</string>
     <string name="cancellation_confirmed">ਰੱਦ ਕਰਨ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਗਈ</string>
-    <string name="fullname">ਪੂਰਾ ਨਾਂਮ</string>
-    <string name="house_flat">ਘਰ/ਫਲੈਟ ਨੰਬਰ</string>
-    <string name="landmark">ਲੈਂਡਮਾਰਕ</string>
-    <string name="state">ਰਾਜ</string>
-    <string name="pincode">ਪਿੰਨ ਕੋਡ</string>
-    <string name="phone_number1">ਫੋਨ ਨੰਬਰ 1</string>
-    <string name="phone_number2">ਫੋਨ ਨੰਬਰ 2</string>
+    <string name="fullname">ਪੂਰਾ ਨਾਂਮ <font color='#FF4A4A'>*</font></string>
+    <string name="house_flat">ਘਰ/ਫਲੈਟ ਨੰਬਰ <font color='#FF4A4A'>*</font></string>
+    <string name="landmark">ਲੈਂਡਮਾਰਕ <font color='#FF4A4A'>*</font></string>
+    <string name="state">ਰਾਜ <font color='#FF4A4A'>*</font></string>
+    <string name="pincode">ਪਿੰਨ ਕੋਡ <font color='#FF4A4A'>*</font></string>
+    <string name="phone_number1">ਫੋਨ ਨੰਬਰ 1 <font color='#FF4A4A'>*</font></string>
+    <string name="phone_number2">ਫ਼ੋਨ ਨੰਬਰ 2 </string>
     <string name="enter_house_number">ਘਰ ਦਾ ਨੰਬਰ ਦਾਖਲ ਕਰੋ</string>
     <string name="enter_address">ਪੂਰਾ ਪਤਾ ਦਾਖਲ ਕਰੋ</string>
     <string name="near_by">ਨੇੜੇ</string>
@@ -135,8 +135,8 @@
     <string name="edit">ਸੰਪਾਦਿਤ ਕਰੋ</string>
     <string name="addnewaddress">ਨਵਾਂ ਪਤਾ ਸ਼ਾਮਲ ਕਰੋ</string>
     <string name="addshipingaddress">ਡਿਲੀਵਰੀ ਪਤਾ ਸ਼ਾਮਲ ਕਰੋ</string>
-    <string name="fillther">ਦਿੱਤੇ ਖਾਲੀ ਖੇਤਰ ਭਰੋ</string>
-    <string name="saveas">ਬਤੌਰ ਮਹਿਫ਼ੂਜ਼ ਕਰੋ</string>
+    <string name="fillther">ਦਿੱਤੇ ਖਾਲੀ ਖੇਤਰ ਭਰੋ </string>
+    <string name="saveas">ਬਤੌਰ ਮਹਿਫ਼ੂਜ਼ ਕਰੋ <font color='#FF4A4A'>*</font></string>
     <string name="home">ਘਰ</string>
     <string name="work">ਕੰਮ</string>
     <string name="other">ਹੋਰ</string>
@@ -226,6 +226,7 @@
     <string name="go_to_settings">ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾਓ</string>
     <string name="who_are_you">ਆਪ ਕੌਣ ਹਨ?</string>
 
-    <string name="start">GOT IT</string>
+    <string name="start">ਮਿਲ ਗਿਆ</string>
+    <string name="selected_lag"> ਤੁਸੀਂ ਭਾਸ਼ਾ ਚੁਣੀ ਹੈ </string>
 
 </resources>

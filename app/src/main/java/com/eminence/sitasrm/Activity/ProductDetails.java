@@ -10,7 +10,9 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.eminence.sitasrm.Fragments.CartFragment;
 import com.eminence.sitasrm.MainActivity;
+import com.eminence.sitasrm.Models.AddressModel;
 import com.eminence.sitasrm.Models.CartResponse;
 import com.eminence.sitasrm.R;
 import com.eminence.sitasrm.Utils.DatabaseHandler;
@@ -50,6 +53,9 @@ public class ProductDetails extends AppCompatActivity {
     String price;
     List<CartResponse> alldata;
     String r_code;
+    int productQuentity = 0;
+    LinearLayout txtCart;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,9 +66,10 @@ public class ProductDetails extends AppCompatActivity {
 
         productid = getIntent().getExtras().getString("productid");
 
-        if (Helper.INSTANCE.isNetworkAvailable(ProductDetails.this)){
+        if (Helper.INSTANCE.isNetworkAvailable(ProductDetails.this)) {
             getcart_availablity(productid);
             submit(productid);
+            getCartList();
         } else {
             Helper.INSTANCE.Error(ProductDetails.this, getString(R.string.NOCONN));
         }
@@ -70,10 +77,34 @@ public class ProductDetails extends AppCompatActivity {
         txt_BuyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    addtocart(productid,price,"1");
+                YourPreference yourPrefrence = YourPreference.getInstance(ProductDetails.this);
+                String logintype = yourPrefrence.getData("logintype");
+
+                if(logintype.equalsIgnoreCase("signup_retail")){
+                    int maxLimit = Integer.parseInt(yourPrefrence.getData("retailerProductCountLimit"));
+                    if(productQuentity < maxLimit) {
+                        addtocart(productid,price,"1");
+                    } else {
+                        Toast.makeText(ProductDetails.this, "Max product limit is "+maxLimit, Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    int maxLimit = Integer.parseInt(yourPrefrence.getData("userProductCountLimit"));
+                    if(productQuentity < maxLimit){
+                        addtocart(productid,price,"1");
+                    } else {
+                        Toast.makeText(ProductDetails.this, "Max product limit is "+maxLimit, Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
-
+        txtCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductDetails.this, MainActivity.class);
+                intent.putExtra("goto","cart");
+                startActivity(intent);
+            }
+        });
     }
 
     private void intializeview() {
@@ -85,6 +116,9 @@ public class ProductDetails extends AppCompatActivity {
         txt_amount = findViewById(R.id.txt_amount);
         txt_packofPouch = findViewById(R.id.txt_packofPouch);
         titleMoney = findViewById(R.id.titleMoney);
+        txtCart = findViewById(R.id.txtCart);
+
+
 
     }
 
@@ -176,16 +210,9 @@ public class ProductDetails extends AppCompatActivity {
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, url, parameters, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-
-                // Toast.makeText(HotelMain.this, ""+response, Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject obj = new JSONObject(String.valueOf(response));
-                    // Toast.makeText(ProductDetails.this, "" + obj.getString("message"), Toast.LENGTH_SHORT).show();
-
                       r_code = obj.getString("status");
-
-
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -193,13 +220,12 @@ public class ProductDetails extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // Toast.makeText(Signup.this, "" + error, Toast.LENGTH_SHORT).show();
             }
         }) {
 
         };
-        requestQueue.add(stringRequest);
 
+        requestQueue.add(stringRequest);
         stringRequest.setShouldCache(false);
 
     }
@@ -212,6 +238,11 @@ public class ProductDetails extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getCartList();
+    }
 
     private void addtocart(String product_id, String price, String qty) {
         YourPreference yourPrefrence = YourPreference.getInstance(ProductDetails.this);
@@ -261,10 +292,7 @@ public class ProductDetails extends AppCompatActivity {
     }
 
     private void updateCart(String product_id,String qty) {
-
-
-        YourPreference yourPrefrence = YourPreference.getInstance(ProductDetails.this)
-                ;
+        YourPreference yourPrefrence = YourPreference.getInstance(ProductDetails.this);
         String user_id = yourPrefrence.getData("id");
         String url = baseurl + "update_cart";
         RequestQueue requestQueue = Volley.newRequestQueue(ProductDetails.this);
@@ -280,7 +308,6 @@ public class ProductDetails extends AppCompatActivity {
         }
 
         Log.i("update_cart Parameter",""+params);
-
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, url, params, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -300,7 +327,54 @@ public class ProductDetails extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //      Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                Log.d("ABC", String.valueOf(error));
+            }
+        }) {
+
+        };
+        requestQueue.add(stringRequest);
+        stringRequest.setShouldCache(false);
+    }
+
+    private void getCartList() {
+        YourPreference yourPrefrence = YourPreference.getInstance(ProductDetails.this);
+        String user_id = yourPrefrence.getData("id");
+        String url = baseurl + "cart_list";
+        RequestQueue requestQueue = Volley.newRequestQueue(ProductDetails.this);
+        JSONObject params = new JSONObject();
+
+        try {
+            params.put("user_id", user_id);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, url, params, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONObject obj = new JSONObject(String.valueOf(response));
+                    String status_code = obj.getString("status");
+                    if (status_code.equalsIgnoreCase("1")) {
+                        JSONArray jsonArray = obj.getJSONArray("data");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jsonObject2 = jsonArray.getJSONObject(i);
+                            int product_id = Integer.parseInt(jsonObject2.getString("product_id"));
+                            int pId = Integer.parseInt(productid);
+                            if (product_id == pId) {
+                                productQuentity = Integer.parseInt(jsonObject2.getString("quantity"));
+                            }
+                        }
+
+                    } else {
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
                 Log.d("ABC", String.valueOf(error));
             }
         }) {

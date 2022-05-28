@@ -1,5 +1,7 @@
 package com.eminence.sitasrm.Adapters;
 
+import static com.eminence.sitasrm.Utils.Baseurl.baseurl;
+import static com.eminence.sitasrm.Utils.Baseurl.imagebaseurl;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -11,11 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -27,38 +27,37 @@ import com.bumptech.glide.request.RequestOptions;
 import com.eminence.sitasrm.Activity.ProductDetails;
 import com.eminence.sitasrm.Fragments.CartFragment;
 import com.eminence.sitasrm.Interface.BadgingInterface;
-import com.eminence.sitasrm.Models.CartResponse;
+import com.eminence.sitasrm.MainActivity;
 import com.eminence.sitasrm.Models.ProductModel;
 import com.eminence.sitasrm.R;
 import com.eminence.sitasrm.Utils.DatabaseHandler;
 import com.eminence.sitasrm.Utils.YourPreference;
-import com.google.gson.Gson;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.eminence.sitasrm.Utils.Baseurl.baseurl;
-import static com.eminence.sitasrm.Utils.Baseurl.imagebaseurl;
-
-public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHolder> {
+public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.MyViewHolder> {
     Context context;
     ArrayList<ProductModel> subcat;
     String from;
     DatabaseHandler databaseHandler;
     BadgingInterface badgingInterface;
     ProgressBar progressBar;
+    int lastposition = -1;
 
-    public ProductAdapter(ArrayList<ProductModel> subcat, Context context, BadgingInterface badgingInterface, String from) {
+
+    public ProductListAdapter(ArrayList<ProductModel> subcat, Context context, BadgingInterface badgingInterface, String from) {
         this.subcat = subcat;
         this.context = context;
         this.from = from;
         this.badgingInterface = badgingInterface;
         setUpDB();
 
-    }  public ProductAdapter(ArrayList<ProductModel> subcat, Context context, BadgingInterface badgingInterface, String from, ProgressBar progressBar) {
+    }
+
+    public ProductListAdapter(ArrayList<ProductModel> subcat, Context context, BadgingInterface badgingInterface, String from, ProgressBar progressBar) {
         this.subcat = subcat;
         this.context = context;
         this.from = from;
@@ -85,21 +84,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
             holder.title.setText(subcat.get(position).getP_name_hindi() + " (" + subcat.get(position).getCaption_eng()+")");
             holder.Discription.setText(subcat.get(position).getSingle_description_hindi());
             holder.txt_packofPouch.setText(subcat.get(position).getPouch_quantity() + "\nपाउच \nका पैक");
-            } else {
+        } else {
             holder.txt_mrp.setText("MRP: ₹" + subcat.get(position).getPrice());
             holder.title.setText(subcat.get(position).getProduct_name() + " (" + subcat.get(position).getCaption_eng()+")");
             holder.Discription.setText(subcat.get(position).getSingle_description_english());
             holder.txt_packofPouch.setText("Pack of" + "\n" + subcat.get(position).getPouch_quantity() + "\nPouches");
-
         }
 
-        if (from.equalsIgnoreCase("cart")) {
+        if (from.equalsIgnoreCase("cart")){
             holder.txt_plus.setVisibility(View.INVISIBLE);
             holder.txt_minus.setVisibility(View.INVISIBLE);
         }
 
         if (subcat.get(position).getCart_availability().equalsIgnoreCase("1")) {
-            holder.inc_layout.setVisibility(View.VISIBLE);
+            holder.inc_layout.setVisibility(View.GONE);
+            holder.addedTOCartLayout.setVisibility(View.VISIBLE);
             holder.addlayout.setVisibility(View.GONE);
             holder.txt_itemCount.setText(subcat.get(position).getQuantity());
         }
@@ -119,7 +118,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
                             context.startActivity(intent);
                         }
                     }
-
                 }
             }
         });
@@ -134,9 +132,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
         holder.addlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.inc_layout.setVisibility(View.VISIBLE);
+                holder.inc_layout.setVisibility(View.GONE);
+
+                holder.addedTOCartLayout.setVisibility(View.VISIBLE);
                 holder.addlayout.setVisibility(View.GONE);
                 holder.txt_itemCount.setText("1");
+
+                lastposition = position;
+                notifyDataSetChanged();
 
                 //Local Database
 //                CartResponse cartResponse = new CartResponse(subcat.get(position).getProduct_id(), "" + 1, subcat.get(position).getPrice());
@@ -147,8 +150,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
                 } catch (Exception e){
                     e.printStackTrace();
                 }
-
-
             }
         });
 
@@ -181,7 +182,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
                 }
 
                 //Local database
-              //  databaseHandler.cartInterface().setQty(subcat.get(position).getProduct_id(), "" + qty2);
+                //  databaseHandler.cartInterface().setQty(subcat.get(position).getProduct_id(), "" + qty2);
 
             }
         });
@@ -193,11 +194,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
                 if (qty.equals("0")) {
                     holder.addlayout.setVisibility(View.VISIBLE);
                     holder.inc_layout.setVisibility(View.GONE);
+                    holder.addedTOCartLayout.setVisibility(View.GONE);
                 } else {
                     int qty2 = Integer.parseInt(qty) - 1;
                     holder.txt_itemCount.setText("" + qty2);
-                   // Local Database
-                   // databaseHandler.cartInterface().setQty(subcat.get(position).getProduct_id(), "" + qty2);
+                    // Local Database
+                    // databaseHandler.cartInterface().setQty(subcat.get(position).getProduct_id(), "" + qty2);
 
                     try {
                         updateCart(subcat.get(position).getProduct_id(),""+qty2);
@@ -209,8 +211,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
                         if (from.equalsIgnoreCase("cartFragment")) {
                             holder.addlayout.setVisibility(View.VISIBLE);
                             holder.inc_layout.setVisibility(View.GONE);
+                            holder.addedTOCartLayout.setVisibility(View.GONE);
                             //Local Databse
-                         //   databaseHandler.cartInterface().deletebyid(subcat.get(position).getProduct_id());
+                            //   databaseHandler.cartInterface().deletebyid(subcat.get(position).getProduct_id());
                             removecart(subcat.get(position).getProduct_id());
                             if (subcat.size() != 0) {
                                 subcat.remove(position);
@@ -221,6 +224,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
                             removecart(subcat.get(position).getProduct_id());
                             holder.addlayout.setVisibility(View.VISIBLE);
                             holder.inc_layout.setVisibility(View.GONE);
+                            holder.addedTOCartLayout.setVisibility(View.GONE);
                             databaseHandler.cartInterface().deletebyid(subcat.get(position).getProduct_id());
                         }
                     }
@@ -228,6 +232,29 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
             }
         });
 
+        holder.goToCartLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                intent.putExtra("goto","cart");
+                context.startActivity(intent);
+            }
+        });
+
+
+        holder.proceedToPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CartFragment.proceedTOPay(context);
+            }
+        });
+
+        if( lastposition == position ) {
+            holder.proceedToCheckBackground.setVisibility(View.VISIBLE);
+        } else {
+            holder.proceedToCheckBackground.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -238,7 +265,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name, title, Discription, txt_itemCount, txt_minus, txt_plus, txt_mrp, txt_packofPouch;
         ImageView product_image;
-        LinearLayout product_layout, addlayout, inc_layout, contentLayout;
+        LinearLayout product_layout, addlayout, inc_layout, contentLayout, proceedToCheckBackground,addedTOCartLayout,goToCartLayout,proceedToPay;
 
         public MyViewHolder(View view) {
             super(view);
@@ -254,6 +281,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
             contentLayout = view.findViewById(R.id.contentLayout);
             txt_mrp = view.findViewById(R.id.txt_mrp);
             txt_packofPouch = view.findViewById(R.id.txt_packofPouch);
+            proceedToCheckBackground = view.findViewById(R.id.proceedToCheckBackground);
+            addedTOCartLayout = view.findViewById(R.id.addedTOCartLayout);
+            goToCartLayout = view.findViewById(R.id.goToCartLayout);
+            proceedToPay = view.findViewById(R.id.proceedToPay);
+
         }
     }
 
@@ -401,5 +433,4 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
     }
 
 }
-
 

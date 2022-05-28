@@ -52,11 +52,11 @@ public class ProductOrderAdapter extends RecyclerView.Adapter<ProductOrderAdapte
         YourPreference yourPrefrence = YourPreference.getInstance(context);
         String language = yourPrefrence.getData("language");
 
-        if(from.equalsIgnoreCase("RequestCancel")){
-            holder.arrowLayout.setVisibility(View.GONE);
-        } else {
-            holder.arrowLayout.setVisibility(View.VISIBLE);
-        }
+//        if(from.equalsIgnoreCase("RequestCancel")){
+//            holder.arrowLayout.setVisibility(View.GONE);
+//        } else {
+//            holder.arrowLayout.setVisibility(View.GONE);
+//        }
 
         if (language.equalsIgnoreCase("hi")){
             holder.txt_productName.setText(subcat.get(position).getProductNameHindi() +" "+ subcat.get(position).getP_caption_hindi());
@@ -89,33 +89,33 @@ public class ProductOrderAdapter extends RecyclerView.Adapter<ProductOrderAdapte
         holder.singleProductLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(from.equalsIgnoreCase("RequestCancel")) {
-
-                } else {
-                    if (subcat.get(position).getOdrStatus().equalsIgnoreCase("0")) {
-                        Intent intent = new Intent(context, CancelledOrderActivity.class);
-                        intent.putExtra("order_id", od_id);
-                        intent.putExtra("product_id", subcat.get(position).getProductId());
-                        intent.putExtra("quantity", subcat.get(position).getQuantity());
-                        intent.putExtra("name", subcat.get(position).getProductName());
-                        intent.putExtra("name_hindi", subcat.get(position).getProductNameHindi());
-                        intent.putExtra("price", "₹" + subcat.get(position).getPrice());
-                        intent.putExtra("product_image", subcat.get(position).getProductImage());
-                        context.startActivity(intent);
-
-                    } else {
-                        Intent intent = new Intent(context, CancelSingleProductActivity.class);
-                        intent.putExtra("order_id", od_id);
-                        intent.putExtra("created_at", subcat.get(position).getCreatedAt());
-                        intent.putExtra("product_id", subcat.get(position).getProductId());
-                        intent.putExtra("quantity", subcat.get(position).getQuantity());
-                        intent.putExtra("name", subcat.get(position).getProductName());
-                        intent.putExtra("name_hindi", subcat.get(position).getProductNameHindi());
-                        intent.putExtra("price", "₹" + subcat.get(position).getPrice());
-                        intent.putExtra("product_image", subcat.get(position).getProductImage());
-                        context.startActivity(intent);
-                    }
-                }
+//                if(from.equalsIgnoreCase("RequestCancel")) {
+//
+//                } else {
+//                    if (subcat.get(position).getOdrStatus().equalsIgnoreCase("0")) {
+//                        Intent intent = new Intent(context, CancelledOrderActivity.class);
+//                        intent.putExtra("order_id", od_id);
+//                        intent.putExtra("product_id", subcat.get(position).getProductId());
+//                        intent.putExtra("quantity", subcat.get(position).getQuantity());
+//                        intent.putExtra("name", subcat.get(position).getProductName());
+//                        intent.putExtra("name_hindi", subcat.get(position).getProductNameHindi());
+//                        intent.putExtra("price", "₹" + subcat.get(position).getPrice());
+//                        intent.putExtra("product_image", subcat.get(position).getProductImage());
+//                        context.startActivity(intent);
+//
+//                    } else {
+//                        Intent intent = new Intent(context, CancelSingleProductActivity.class);
+//                        intent.putExtra("order_id", od_id);
+//                        intent.putExtra("created_at", subcat.get(position).getCreatedAt());
+//                        intent.putExtra("product_id", subcat.get(position).getProductId());
+//                        intent.putExtra("quantity", subcat.get(position).getQuantity());
+//                        intent.putExtra("name", subcat.get(position).getProductName());
+//                        intent.putExtra("name_hindi", subcat.get(position).getProductNameHindi());
+//                        intent.putExtra("price", "₹" + subcat.get(position).getPrice());
+//                        intent.putExtra("product_image", subcat.get(position).getProductImage());
+//                        context.startActivity(intent);
+//                    }
+//                }
             }
         });
     }

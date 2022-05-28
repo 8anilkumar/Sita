@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/metropolissemibold"
             android:textSize="@dimen/_16sdp"
+            android:visibility="gone"
             android:textColor="@color/black"
             android:text="@string/select_language_hindi"/>
 
@@ -66,7 +67,7 @@
                     android:background="@drawable/language_border"
                     android:paddingBottom="@dimen/_7sdp"
                     android:paddingTop="@dimen/_7sdp"
-                    android:text="@string/hindi"/>
+                    android:text="हिन्दी"/>
 
             </LinearLayout>
 
@@ -117,7 +118,7 @@
                     android:background="@drawable/language_border"
                     android:paddingBottom="@dimen/_7sdp"
                     android:paddingTop="@dimen/_7sdp"
-                    android:text="@string/pangabi"/>
+                    android:text="ਪੰਜਾਬੀ"/>
 
             </LinearLayout>
 
@@ -137,7 +138,7 @@
                     android:paddingBottom="@dimen/_7sdp"
                     android:paddingTop="@dimen/_7sdp"
                     android:gravity="center"
-                    android:text="@string/urdu"/>
+                    android:text="اردو"/>
 
             </LinearLayout>
 
@@ -168,7 +169,7 @@
                     android:background="@drawable/language_border"
                     android:paddingBottom="@dimen/_7sdp"
                     android:paddingTop="@dimen/_7sdp"
-                    android:text="@string/bangali"/>
+                    android:text="বাঙালি"/>
 
             </LinearLayout>
 

@@ -21,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.eminence.sitasrm.Activity.Profile.RetailerLogin;
 import com.eminence.sitasrm.R;
 import com.eminence.sitasrm.Utils.Helper;
 import com.eminence.sitasrm.Utils.YourPreference;
@@ -41,7 +42,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     LinearLayout helpLayout;
     RelativeLayout otpverify_Layout;
     SpinnerDialog spinnerDialog;
-    String language;
     TextView languagebuttomn, txt_signUp;
     ArrayList<String> list = new ArrayList<>();
 
@@ -58,17 +58,30 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         list.add(getResources().getString(R.string.bangali));
 
         YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
-        String language = yourPrefrence.getData("languagetext");
+        String language = yourPrefrence.getData("language");
 
-        spinnerDialog = new SpinnerDialog(LoginActivity.this, list, "Select Language", R.style.DialogAnimations_SmileWindow, "Close");
-        spinnerDialog.setCancellable(true); // for cancellable
-        spinnerDialog.setShowKeyboard(false); // for open keyboard by default
+        spinnerDialog = new SpinnerDialog(LoginActivity.this, list, getResources().getString(R.string.select_language), R.style.DialogAnimations_SmileWindow, "Close");
+        spinnerDialog.setCancellable(true);
+        spinnerDialog.setShowKeyboard(false);
 
         if (language.equalsIgnoreCase("")) {
             languagebuttomn.setText("English");
         } else {
-            languagebuttomn.setText(language);
+            if(language.equalsIgnoreCase("en")){
+                languagebuttomn.setText(getResources().getString(R.string.english));
+            } else if(language.equalsIgnoreCase("hi")){
+                languagebuttomn.setText(getResources().getString(R.string.hindi));
+            } else if(language.equalsIgnoreCase("pa")){
+                languagebuttomn.setText(getResources().getString(R.string.pangabi));
+            } else if(language.equalsIgnoreCase("ur")){
+                languagebuttomn.setText(getResources().getString(R.string.urdu));
+            } else if(language.equalsIgnoreCase("bn")){
+                languagebuttomn.setText(getResources().getString(R.string.bangali));
+            } else {
+                languagebuttomn.setText(getResources().getString(R.string.english));
+            }
         }
+
 
         if (Helper.INSTANCE.isNetworkAvailable(LoginActivity.this)) {
             languagechanger();
@@ -195,42 +208,36 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         spinnerDialog.bindOnSpinerListener(new OnSpinerItemClick() {
             @Override
             public void onClick(String item, int position) {
-                language = item;
                 languagebuttomn.setText(item);
 
                 if (position == 0) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     yourPrefrence.saveData("language", "en");
                     yourPrefrence.saveData("languagetext", item);
-                    Toast.makeText(LoginActivity.this, "Selected Language is " + item, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                     finishAffinity();
                 } else if (position == 1) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     yourPrefrence.saveData("languagetext", item);
                     yourPrefrence.saveData("language", "hi");
-                    Toast.makeText(LoginActivity.this, "Selected Language is " + item, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                     finishAffinity();
                 }else if (position == 2) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     yourPrefrence.saveData("languagetext", item);
                     yourPrefrence.saveData("language", "pa");
-                    Toast.makeText(LoginActivity.this, "Selected Language is " + item, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                     finishAffinity();
                 }else if (position == 3) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     yourPrefrence.saveData("languagetext", item);
                     yourPrefrence.saveData("language", "ur");
-                    Toast.makeText(LoginActivity.this, "Selected Language is " + item, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                     finishAffinity();
                 }else if (position == 4) {
                     YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                     yourPrefrence.saveData("languagetext", item);
                     yourPrefrence.saveData("language", "bn");
-                    Toast.makeText(LoginActivity.this, "Selected Language is " + item, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                     finishAffinity();
                 }

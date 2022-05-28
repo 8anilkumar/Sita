@@ -24,6 +24,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.eminence.sitasrm.Adapters.ImageSlideAdapter;
 import com.eminence.sitasrm.Adapters.ProductAdapter;
+import com.eminence.sitasrm.Adapters.ProductListAdapter;
 import com.eminence.sitasrm.Interface.BadgingInterface;
 import com.eminence.sitasrm.MainActivity;
 import com.eminence.sitasrm.Models.CartModel;
@@ -236,7 +237,7 @@ public class AllProduct extends AppCompatActivity implements BadgingInterface {
 
     private void bindadapter(ArrayList<ProductModel> offerlist) {
         if(offerlist.size() != 0) {
-            ProductAdapter offerlistAdapter = new ProductAdapter(offerlist, getApplicationContext(), this, "home");
+            ProductListAdapter offerlistAdapter = new ProductListAdapter(offerlist, getApplicationContext(), this, "home");
             product_recycle.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
             product_recycle.setAdapter(offerlistAdapter);
             offerlistAdapter.notifyDataSetChanged();

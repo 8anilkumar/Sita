@@ -288,7 +288,6 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
 
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -298,6 +297,7 @@
                             android:fontFamily="@font/metropolis_regular"
                             android:text="@string/phone_number2"
                             android:textColor="@color/darkgrey"
+                            android:inputType="text"
                             android:textSize="@dimen/tweleve" />
 
                         <EditText
@@ -323,11 +323,12 @@
                     android:layout_height="wrap_content"
                     android:text="@string/markas"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:checked="true"
                     android:layout_marginLeft="@dimen/twentydp"
                     android:id="@+id/deafult_checkbox"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/twentydp"
                     android:layout_marginTop="@dimen/twentydp"

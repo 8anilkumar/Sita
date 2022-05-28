@@ -27,8 +27,7 @@ public class LanguageActivity extends AppCompatActivity {
         back_btn=findViewById(R.id.back_btn);
         bengali_layout=findViewById(R.id.bengali_layout);
         String from=getIntent().getExtras().getString("from");
-        if (from.equalsIgnoreCase("profile"))
-        {
+        if (from.equalsIgnoreCase("profile")) {
             back_btn.setVisibility(View.VISIBLE);
         }
 
@@ -41,7 +40,7 @@ public class LanguageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
-                yourPrefrence.saveData("languagetext", "English (इंग्लिश)");
+                yourPrefrence.saveData("languagetext", "English");
                 yourPrefrence.saveData("language","en");
                 Intent intent=new Intent(LanguageActivity.this,SplashScreen.class);
                 startActivity(intent);
@@ -55,7 +54,7 @@ public class LanguageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                 yourPrefrence.saveData("language","hi");
-                yourPrefrence.saveData("languagetext", "Hindi (हिंदी)");
+                yourPrefrence.saveData("languagetext", "Hindi");
                 Intent intent=new Intent(LanguageActivity.this,SplashScreen.class);
                 startActivity(intent);
                 finishAffinity();
@@ -69,7 +68,7 @@ public class LanguageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                 yourPrefrence.saveData("language","pa");
-                yourPrefrence.saveData("languagetext", "Panjabi (पंजाबी)");
+                yourPrefrence.saveData("languagetext", "Panjabi");
                 Intent intent=new Intent(LanguageActivity.this,SplashScreen.class);
                 startActivity(intent);
                 finishAffinity();
@@ -83,7 +82,7 @@ public class LanguageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                 yourPrefrence.saveData("language","ur");
-                yourPrefrence.saveData("languagetext", "Urdu (उर्दू)");
+                yourPrefrence.saveData("languagetext", "Urdu");
                 Intent intent=new Intent(LanguageActivity.this,SplashScreen.class);
                 startActivity(intent);
                 finishAffinity();
@@ -97,7 +96,7 @@ public class LanguageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
                 yourPrefrence.saveData("language","bn");
-                yourPrefrence.saveData("languagetext", "Bangali (बंगाली)");
+                yourPrefrence.saveData("languagetext", "Bangali");
                 Intent intent=new Intent(LanguageActivity.this,SplashScreen.class);
                 startActivity(intent);
                 finishAffinity();

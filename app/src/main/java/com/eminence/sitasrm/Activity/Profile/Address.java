@@ -116,7 +116,7 @@ public class Address extends AppCompatActivity implements MakeDefaultAddressList
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Address.this, "" + error, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Address.this, "" + error, Toast.LENGTH_SHORT).show();
             }
         }) {
 

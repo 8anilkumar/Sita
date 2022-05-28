@@ -105,14 +105,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/blue_button_background"
-                    android:backgroundTint="@color/light_grey_gray2"
                     android:gravity="right">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:background="@drawable/blue_button_background"
+                        android:backgroundTint="@color/light_grey_gray2"
+                        android:layout_marginEnd="@dimen/ten"
                         android:gravity="center_vertical">
 
                         <LinearLayout
@@ -138,6 +139,26 @@
                         android:layout_width="@dimen/_90sdp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/addedTOCartLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="2dp"
+                                android:drawableLeft="@drawable/ic_check"
+                                android:textStyle="bold"
+                                android:text="Added to cart"
+                                android:textColor="@color/green"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/inc_layout"
@@ -210,8 +231,68 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/proceedToCheckBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/goToCartLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/borderround"
+                    android:elevation="1dp"
+                    android:layout_marginStart="@dimen/ten"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:layout_marginBottom="@dimen/_6sdp"
+                        android:fontFamily="@font/metropolissemibold"
+                        android:gravity="center"
+                        android:text="@string/cart"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/proceedToPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/blue_button_background"
+                    android:backgroundTint="@color/yellow"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/metropolissemibold"
+                        android:gravity="center"
+                        android:text="@string/proceed_to_checkout"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
+
+
 
     </androidx.cardview.widget.CardView>
 

@@ -3,30 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/border.xml" value="0.2405" />
+        <entry key="app/src/main/res/drawable/bordergrey.xml" value="0.2405" />
+        <entry key="app/src/main/res/drawable/borderround.xml" value="0.2405" />
+        <entry key="app/src/main/res/drawable/corner_background.xml" value="0.2405" />
         <entry key="app/src/main/res/drawable/corner_bg.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/corner_grey_background.xml" value="0.2405" />
         <entry key="app/src/main/res/drawable/ic_arrow_dropdown.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/ic_baseline_check.xml" value="0.1935" />
         <entry key="app/src/main/res/drawable/ic_icon_close_circle.xml" value="0.1935" />
         <entry key="app/src/main/res/drawable/white_corner_background.xml" value="0.1565" />
-        <entry key="app/src/main/res/layout/activity_add_adress.xml" value="0.1526268115942029" />
+        <entry key="app/src/main/res/layout/activity_add_adress.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_address.xml" value="0.121875" />
         <entry key="app/src/main/res/layout/activity_all_product.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_cancellation_confirmed.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/activity_check_out.xml" value="0.1526268115942029" />
+        <entry key="app/src/main/res/layout/activity_check_out.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_image_picker.xml" value="0.16927083333333334" />
         <entry key="app/src/main/res/layout/activity_intro_slider.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_language.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1526268115942029" />
         <entry key="app/src/main/res/layout/activity_on_bording_screen.xml" value="0.15942028985507245" />
         <entry key="app/src/main/res/layout/activity_order_details.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_otpscreen.xml" value="0.18125" />
         <entry key="app/src/main/res/layout/activity_points_won.xml" value="0.15942028985507245" />
-        <entry key="app/src/main/res/layout/activity_product_details.xml" value="0.15942028985507245" />
+        <entry key="app/src/main/res/layout/activity_product_details.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_redeem_points.xml" value="0.1526268115942029" />
         <entry key="app/src/main/res/layout/activity_retailer_login.xml" value="0.15942028985507245" />
         <entry key="app/src/main/res/layout/activity_retailer_signup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_reward_point.xml" value="0.1526268115942029" />
         <entry key="app/src/main/res/layout/activity_scratch_coupon.xml" value="0.15942028985507245" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_whoeare_you.xml" value="0.22" />
         <entry key="app/src/main/res/layout/address_list_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/bottom_sheet_layout.xml" value="0.22" />

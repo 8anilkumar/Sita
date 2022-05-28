@@ -85,7 +85,7 @@
     <string name="total_amount">कुल रकम</string>
     <string name="subs_7_percent_discount">हर ऑर्डर पर\n 7% तक की\n छूट पाएं</string>
     <string name="subs_10_percent_discount">हर ऑर्डर पर\n 10% तक की\n छूट पाएं</string>
-    <string name="address">पता</string>
+    <string name="address">पता <font color='#FF4A4A'>*</font></string>
     <string name="yesterday">बीता हुआ कल</string>
     <string name="no_order">अभी तक कोई ऑर्डर नहीं, कृपया ऑर्डर दें</string>
     <string name="earlier">पूर्व</string>
@@ -130,8 +130,8 @@
     <string name="Today">आज</string>
     <string name="edit">संपादित करें</string>
     <string name="addnewaddress">नया पता जोड़ें</string>
-    <string name="fillther">दिए गए रिक्त क्षेत्रों को भरें</string>
-    <string name="saveas">के रूप रक्षित करें</string>
+    <string name="fillther">दिए गए रिक्त क्षेत्रों को भरें <font color='#FF4A4A'>*</font></string>
+    <string name="saveas">के रूप रक्षित करें <font color='#FF4A4A'>*</font></string>
     <string name="home">घर</string>
     <string name="work">कार्य</string>
     <string name="other">अन्य</string>
@@ -143,13 +143,13 @@
     <string name="subject">विषय</string>
     <string name="editdetails">विवरण संपादित करें</string>
     <string name="uploadprofile">प्रोफ़ाइल विवरण अपडेट करें</string>
-    <string name="fullname">पूरा नाम</string>
-    <string name="house_flat">घर/फ्लैट नंबर</string>
-    <string name="landmark">सीमाचिह्न</string>
-    <string name="state">राज्य</string>
-    <string name="pincode">पिन कोड</string>
-    <string name="phone_number1">फोन नंबर 1</string>
-    <string name="phone_number2">फोन नंबर 2</string>
+    <string name="fullname">पूरा नाम <font color='#FF4A4A'>*</font></string>
+    <string name="house_flat">घर/फ्लैट नंबर <font color='#FF4A4A'>*</font></string>
+    <string name="landmark">सीमाचिह्न <font color='#FF4A4A'>*</font></string>
+    <string name="state">राज्य <font color='#FF4A4A'>*</font></string>
+    <string name="pincode">पिन कोड <font color='#FF4A4A'>*</font></string>
+    <string name="phone_number1">फोन नंबर 1 <font color='#FF4A4A'>*</font></string>
+    <string name="phone_number2">फ़ोन नंबर 2</string>
     <string name="enter_email">अपना ईमेल दर्ज करें</string>
     <string name="enter_dob">अपना जन्मतिथि दर्ज करें</string>
     <string name="saveaddress">पता सहेजें </string>
@@ -222,6 +222,7 @@
     <string name="go_to_settings">सेटिंग्स में जाओ</string>
     <string name="who_are_you">आप कौन हैं?</string>
 
-    <string name="start">GOT IT</string>
+    <string name="start">समझ गया</string>
+    <string name="selected_lag"> आपने भाषा चुनी है </string>
 
 </resources>

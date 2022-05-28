@@ -51,6 +51,7 @@ import com.eminence.sitasrm.Adapters.EarnAdapter;
 import com.eminence.sitasrm.Adapters.FeedbackSliderAdapter;
 import com.eminence.sitasrm.Adapters.ImageSlideAdapter;
 import com.eminence.sitasrm.Adapters.ProductAdapter;
+import com.eminence.sitasrm.Adapters.ProductListAdapter;
 import com.eminence.sitasrm.Adapters.VideoAdapter;
 import com.eminence.sitasrm.Adapters.WinnerAdapter;
 import com.eminence.sitasrm.Interface.AddLifecycleCallback;
@@ -750,7 +751,7 @@ public class HomeFragment extends Fragment implements BadgingInterface, AddLifec
 
     }
 
-    public void Productlist() {
+    public void productlist() {
         offerlist.clear();
         String url = baseurl + "product_list";
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
@@ -849,7 +850,7 @@ public class HomeFragment extends Fragment implements BadgingInterface, AddLifec
 
     private void bindadapter(ArrayList<ProductModel> offerlist) {
         if (offerlist.size() != 0){
-            ProductAdapter offerlistAdapter = new ProductAdapter(offerlist, getActivity(), this, "home");
+            ProductListAdapter offerlistAdapter = new ProductListAdapter(offerlist, getActivity(), this, "home");
             product_recycle.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
             product_recycle.setAdapter(offerlistAdapter);
             offerlistAdapter.notifyDataSetChanged();
@@ -958,7 +959,7 @@ public class HomeFragment extends Fragment implements BadgingInterface, AddLifec
                     setUpDB();
                     address();
                     reward();
-                    Productlist();
+                    productlist();
                     getamout();
                     video();
                     getUtility();

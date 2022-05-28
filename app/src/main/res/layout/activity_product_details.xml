@@ -272,6 +272,30 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:id="@+id/txtCart"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/blue_button_background"
+                        android:backgroundTint="@color/yellow"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/metropolissemibold"
+                            android:gravity="center"
+                            android:padding="6dp"
+                            android:text="@string/cart"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
