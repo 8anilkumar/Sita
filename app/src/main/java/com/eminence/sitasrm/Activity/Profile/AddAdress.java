@@ -373,13 +373,15 @@ public class AddAdress extends AppCompatActivity {
         YourPreference yourPrefrence = YourPreference.getInstance(getApplicationContext());
         String language = yourPrefrence.getData("language");
 
-        if (houseno.getText().toString().equalsIgnoreCase("")) {
-            if (language.equalsIgnoreCase("hi")||language.equalsIgnoreCase("")) {
-                houseno.setError("फील्ड अनिवार्य है");
-            } else {
-                houseno.setError("Field is required");
-            }
-        } else if (address.getText().toString().equalsIgnoreCase("")) {
+//        if (houseno.getText().toString().equalsIgnoreCase("")) {
+//            if (language.equalsIgnoreCase("hi")||language.equalsIgnoreCase("")) {
+//                houseno.setError("फील्ड अनिवार्य है");
+//            } else {
+//                houseno.setError("Field is required");
+//            }
+//        } else
+
+         if (address.getText().toString().equalsIgnoreCase("")) {
             if (language.equalsIgnoreCase("hi")||language.equalsIgnoreCase("")) {
                 address.setError("फील्ड अनिवार्य है");
             } else {

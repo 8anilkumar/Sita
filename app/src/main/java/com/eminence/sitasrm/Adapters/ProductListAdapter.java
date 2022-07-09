@@ -141,10 +141,6 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                 lastposition = position;
                 notifyDataSetChanged();
 
-                //Local Database
-//                CartResponse cartResponse = new CartResponse(subcat.get(position).getProduct_id(), "" + 1, subcat.get(position).getPrice());
-//                databaseHandler.cartInterface().addcart(cartResponse);
-
                 try {
                     addtocart(subcat.get(position).getProduct_id(),subcat.get(position).getPrice(),"1");
                 } catch (Exception e){
@@ -178,12 +174,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                     } else {
                         Toast.makeText(context, "Max product limit is "+maxLimit, Toast.LENGTH_SHORT).show();
                     }
-
                 }
-
-                //Local database
-                //  databaseHandler.cartInterface().setQty(subcat.get(position).getProduct_id(), "" + qty2);
-
             }
         });
 
@@ -198,8 +189,6 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                 } else {
                     int qty2 = Integer.parseInt(qty) - 1;
                     holder.txt_itemCount.setText("" + qty2);
-                    // Local Database
-                    // databaseHandler.cartInterface().setQty(subcat.get(position).getProduct_id(), "" + qty2);
 
                     try {
                         updateCart(subcat.get(position).getProduct_id(),""+qty2);
@@ -212,8 +201,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                             holder.addlayout.setVisibility(View.VISIBLE);
                             holder.inc_layout.setVisibility(View.GONE);
                             holder.addedTOCartLayout.setVisibility(View.GONE);
-                            //Local Databse
-                            //   databaseHandler.cartInterface().deletebyid(subcat.get(position).getProduct_id());
+
                             removecart(subcat.get(position).getProduct_id());
                             if (subcat.size() != 0) {
                                 subcat.remove(position);

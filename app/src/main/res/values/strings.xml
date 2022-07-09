@@ -66,8 +66,8 @@
     <string name="view_all_order">View all order</string>
     <string name="cancellation_confirmed">Cancellation Confirmed</string>
     <string name="fullname">Full Name <font color='#FF4A4A'>*</font></string>
-    <string name="house_flat">House/Flat number <font color='#FF4A4A'>*</font></string>
-    <string name="landmark">Landmark <font color='#FF4A4A'>*</font></string>
+    <string name="house_flat">House/Flat number</string>
+    <string name="landmark">Landmark</string>
     <string name="state">State <font color='#FF4A4A'>*</font></string>
     <string name="pincode">Pincode <font color='#FF4A4A'>*</font></string>
     <string name="phone_number1">Phone Number 1 <font color='#FF4A4A'>*</font> </string>

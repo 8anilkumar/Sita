@@ -67,8 +67,8 @@
     <string name="view_all_order">ਸਾਰਾ ਆਰਡਰ ਵੇਖੋ</string>
     <string name="cancellation_confirmed">ਰੱਦ ਕਰਨ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਗਈ</string>
     <string name="fullname">ਪੂਰਾ ਨਾਂਮ <font color='#FF4A4A'>*</font></string>
-    <string name="house_flat">ਘਰ/ਫਲੈਟ ਨੰਬਰ <font color='#FF4A4A'>*</font></string>
-    <string name="landmark">ਲੈਂਡਮਾਰਕ <font color='#FF4A4A'>*</font></string>
+    <string name="house_flat">ਘਰ/ਫਲੈਟ ਨੰਬਰ </string>
+    <string name="landmark">ਲੈਂਡਮਾਰਕ </string>
     <string name="state">ਰਾਜ <font color='#FF4A4A'>*</font></string>
     <string name="pincode">ਪਿੰਨ ਕੋਡ <font color='#FF4A4A'>*</font></string>
     <string name="phone_number1">ਫੋਨ ਨੰਬਰ 1 <font color='#FF4A4A'>*</font></string>

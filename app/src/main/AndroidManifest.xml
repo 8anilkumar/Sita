@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.eminence.sitasrm">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -22,11 +23,12 @@
     </queries>
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        tools:replace="android:allowBackup"
         android:theme="@style/Theme.Sita"
         android:usesCleartextTraffic="true">
         <activity
@@ -35,25 +37,22 @@
         <activity
             android:name=".Activity.UpdateRetailerProfile"
             android:exported="false" />
-        <activity android:name=".Activity.RetailerSignup" />
-        <activity android:name=".Activity.Profile.RetailerLogin" />
-        <activity android:name=".Activity.WhoeareYou" />
-        <activity android:name=".Activity.Profile.Scratch_coupon" />
+        <activity android:name=".Activity.RetailerSignup"
+            android:exported="false"/>
+        <activity android:name=".Activity.Profile.RetailerLogin"
+            android:exported="false"/>
+        <activity android:name=".Activity.WhoeareYou"
+            android:exported="false"/>
+        <activity android:name=".Activity.Profile.Scratch_coupon"
+            android:exported="false"/>
 
         <meta-data
             android:name="io.sentry.dsn"
             android:value="https://3b1b6022aa80420b95b05b83cde25b89@o1175710.ingest.sentry.io/6272778" />
-        <!--
- Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
-           We recommend adjusting this value in production.
-        -->
+
         <meta-data
             android:name="io.sentry.traces.sample-rate"
             android:value="1.0" />
-
-<!--        <meta-data-->
-<!--            android:name="io.sentry.traces.sample-rate"-->
-<!--            android:value="1.0" />-->
 
         <activity
             android:name=".Activity.PointsWon"
@@ -75,61 +74,65 @@
             android:exported="false" />
         <activity
             android:name=".Activity.CancelledOrderActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.CancelSingleProductActivity"
-            android:exported="true" />
-        <activity android:name=".Activity.CancellationConfirmedActivity" />
-        <activity android:name=".Activity.RequestCancelActivity" />
+            android:exported="false" />
+        <activity android:name=".Activity.CancellationConfirmedActivity"
+            android:exported="false"/>
+        <activity android:name=".Activity.RequestCancelActivity"
+            android:exported="false"/>
         <activity
             android:name=".Activity.HelpappActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.AllTransactionActivity"
-            android:exported="true" />
-        <activity android:name=".Activity.SuccesfullSubscribe" />
+            android:exported="false" />
+        <activity android:name=".Activity.SuccesfullSubscribe"
+            android:exported="false"/>
         <activity
             android:name=".Activity.Profile.AboutActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.SubscriptionPlanDetails"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.CancelOrderDetails"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.CancelOrder"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.TrackItem"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.ItemDetails"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.OrderDetails"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.SubscriptionPlanActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Notification"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.ProductDetails"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.CheckOutActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.AllProduct"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Help"
-            android:exported="true" />
+            android:exported="false" />
         <activity android:name=".Activity.Location" />
 
-        <service android:name=".Utils.MyFirebaseMessagingService">
+        <service android:name=".Utils.MyFirebaseMessagingService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
@@ -145,43 +148,43 @@
 
         <activity
             android:name=".Activity.IntroSliderActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.OTPScreen"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.SignUpActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.LoginActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.OnBordingScreen"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Profile.EditProfile"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Profile.PrivacyPolicies"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Profile.Termcondition"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Profile.SendQuery"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Profile.Contactus"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Profile.Feedback"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Profile.AddAdress"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Profile.Address"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.SplashScreen"
             android:exported="true">
@@ -194,8 +197,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-        <activity android:name=".Activity.LanguageActivity" />
-        <activity android:name=".Activity.PaymentSuccessfullActivity" />
+        <activity android:name=".Activity.LanguageActivity"
+            android:exported="false"/>
+        <activity android:name=".Activity.PaymentSuccessfullActivity"
+            android:exported="false"/>
 
         <!-- uCrop cropping activity -->
         <activity

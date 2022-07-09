@@ -13,7 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_check.xml" value="0.1935" />
         <entry key="app/src/main/res/drawable/ic_icon_close_circle.xml" value="0.1935" />
         <entry key="app/src/main/res/drawable/white_corner_background.xml" value="0.1565" />
-        <entry key="app/src/main/res/layout/activity_add_adress.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_add_adress.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_address.xml" value="0.121875" />
         <entry key="app/src/main/res/layout/activity_all_product.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_cancellation_confirmed.xml" value="0.19610507246376813" />
@@ -41,6 +41,7 @@
         <entry key="app/src/main/res/layout/entro_slider_row.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.15942028985507245" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16229885057471263" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.12" />
         <entry key="app/src/main/res/layout/fragment_transactions.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/order_product_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/points.xml" value="0.1526268115942029" />

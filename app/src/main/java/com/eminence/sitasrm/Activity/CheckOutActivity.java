@@ -430,13 +430,9 @@ public class CheckOutActivity extends AppCompatActivity implements PaymentResult
             params.put("wallet_amount", walletAmount);
             params.put("discount_amount", discountAmount);
             params.put("net_amount", payble_amt_main.getText().toString());
-            // params.put("products", jsonArray);
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        // JsonObject jsonObject=new JsonObject(params);
 
         Log.i("order paramenter", String.valueOf(params));
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, url, params, new Response.Listener<JSONObject>() {

@@ -66,8 +66,8 @@
     <string name="view_all_order">সমস্ত অর্ডার দেখুন</string>
     <string name="cancellation_confirmed">বাতিলকরণ নিশ্চিত করা হয়েছে</string>
     <string name="fullname">পুরো নাম <font color='#FF4A4A'>*</font></string>
-    <string name="house_flat">বাড়ি/ফ্ল্যাট নম্বর <font color='#FF4A4A'>*</font></string>
-    <string name="landmark">ল্যান্ডমার্ক <font color='#FF4A4A'>*</font></string>
+    <string name="house_flat">বাড়ি/ফ্ল্যাট নম্বর </string>
+    <string name="landmark">ল্যান্ডমার্ক </string>
     <string name="state">রাষ্ট্র <font color='#FF4A4A'>*</font></string>
     <string name="pincode">পিনকোড <font color='#FF4A4A'>*</font></string>
     <string name="phone_number1">ফোন নম্বর 1 <font color='#FF4A4A'>*</font></string>

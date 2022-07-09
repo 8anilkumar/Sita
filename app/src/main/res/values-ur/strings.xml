@@ -67,8 +67,8 @@
     <string name="view_all_order">تمام آرڈر دیکھیں۔</string>
     <string name="cancellation_confirmed">منسوخی کی تصدیق</string>
     <string name="fullname">پورا نام <font color='#FF4A4A'>*</font></string>
-    <string name="house_flat">مکان/فلیٹ نمبر۔<font color='#FF4A4A'>*</font></string>
-    <string name="landmark">لینڈ مارک۔<font color='#FF4A4A'>*</font></string>
+    <string name="house_flat">مکان/فلیٹ نمبر۔</string>
+    <string name="landmark">لینڈ مارک۔</string>
     <string name="state"><font color='#FF4A4A'>*</font> حالت</string>
     <string name="pincode"><font color='#FF4A4A'>*</font>خفیہ نمبر</string>
     <string name="phone_number1">فون نمبر <font color='#FF4A4A'>*</font>1</string>

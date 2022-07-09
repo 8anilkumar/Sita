@@ -144,8 +144,8 @@
     <string name="editdetails">विवरण संपादित करें</string>
     <string name="uploadprofile">प्रोफ़ाइल विवरण अपडेट करें</string>
     <string name="fullname">पूरा नाम <font color='#FF4A4A'>*</font></string>
-    <string name="house_flat">घर/फ्लैट नंबर <font color='#FF4A4A'>*</font></string>
-    <string name="landmark">सीमाचिह्न <font color='#FF4A4A'>*</font></string>
+    <string name="house_flat">घर/फ्लैट नंबर </string>
+    <string name="landmark">सीमाचिह्न </string>
     <string name="state">राज्य <font color='#FF4A4A'>*</font></string>
     <string name="pincode">पिन कोड <font color='#FF4A4A'>*</font></string>
     <string name="phone_number1">फोन नंबर 1 <font color='#FF4A4A'>*</font></string>
